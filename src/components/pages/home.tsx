@@ -114,7 +114,7 @@ export function HomePage() {
   return <div className="min-h-screen bg-ploy-background-primary font-body text-ploy-text-primary selection:bg-ploy-accent-primary selection:text-ploy-text-on-accent-primary">
     <header className="sticky top-0 z-50 border-b border-ploy-border-primary bg-ploy-background-primary/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-10">
-        <a href="#top" className="inline-flex items-center gap-3" aria-label="Jubili home"><img src="https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/609ed194-jubili-logo-green.webp" alt="Jubili" className="h-10 w-10 rounded-[3px]" /></a>
+        <a href="#top" className="inline-flex items-center" aria-label="Jubili home"><img src="https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/ea6375cd-jubili-full-wordmark-green.webp" alt="Jubili" className="h-14 w-40 rounded-[3px] object-cover object-center sm:h-16 sm:w-44" /></a>
         <div className="flex items-center gap-3">
           <button onClick={() => setLang(lang === "de" ? "en" : "de")} className="min-w-10 text-sm font-semibold underline underline-offset-4" aria-label="Sprache wechseln">{lang === "de" ? "EN" : "DE"}</button>
           <Cta label="nav_call" className="hidden sm:inline-flex">{t.navCta}</Cta>
@@ -125,7 +125,7 @@ export function HomePage() {
     <main id="top">
       <section className="hero mx-auto grid max-w-[1440px] gap-8 px-5 pb-14 pt-10 md:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:pb-24 lg:pt-16">
         <div className="hero__copy max-w-2xl pb-2">
-          <p className="mb-8 max-w-md text-sm font-semibold uppercase tracking-[0.14em] text-ploy-accent-primary">{isDe ? "Interior Design für möblierte Vermietung · Wien" : "Interior design for furnished rentals · Vienna"}</p>
+          <div className="mb-8 flex items-center gap-4"><img src="https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/609ed194-jubili-logo-green.webp" alt="" aria-hidden="true" className="h-14 w-14 rounded-[3px]" /><p className="max-w-md text-sm font-semibold uppercase tracking-[0.14em] text-ploy-accent-primary">{isDe ? "Interior Design für möblierte Vermietung · Wien" : "Interior design for furnished rentals · Vienna"}</p></div>
           <h1 className="hero__title text-balance font-heading text-5xl font-medium leading-[0.92] tracking-[-0.04em] md:text-7xl lg:text-[5.8rem]">{t.heroTitle}</h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-ploy-text-secondary md:text-xl">{t.heroSub}</p>
           <div className="mt-8"><Cta label="hero_call">{t.call}</Cta><p className="mt-3 text-xs leading-relaxed text-ploy-text-secondary">{t.heroMeta}</p></div>
