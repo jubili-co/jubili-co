@@ -1,11 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { HomePage } from "@/components/pages/home";
-import { SITE_CONFIG } from "@/site-config";
 
 export const prerender = true;
 ---
 
-<Layout title={SITE_CONFIG.name} description={SITE_CONFIG.description}>
+<Layout
+  title="Interior Design für möblierte Vermietung in Wien | Petrina Salema"
+  description="Einrichtungskonzept, FF&E-Sourcing und Styling für möblierte Wohnungen und kleine Hospitality-Objekte in Wien. Konzepte ab €890."
+  image="https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/c78251d5-warm-daylight-rental-living-room.webp"
+  imageAlt="Warm eingerichtetes Wohnzimmer im Tageslicht"
+>
   <HomePage client:load />
 </Layout>

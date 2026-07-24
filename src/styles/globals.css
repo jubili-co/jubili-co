@@ -194,17 +194,17 @@
      PLACEHOLDER THEME — TODO: Replace with workspace brand radius and colors (light mode)
      ============================================ */
   /* Border radius */
-  --radius: 0.625rem;
+  --radius: 0.375rem;
   --radius-button: 0.375rem;
-  --radius-card: 0.75rem;
+  --radius-card: 0.25rem;
   --radius-input: 0.375rem;
 
   /* Font families */
-  --font-heading: system-ui, sans-serif, -apple-system;
-  --font-body: system-ui, sans-serif, -apple-system;
+  --font-heading: "Cormorant Garamond Variable", Georgia, serif;
+  --font-body: "DM Sans Variable", system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
-  --font-eyebrow: system-ui, sans-serif, -apple-system;
-  --font-button: system-ui, sans-serif, -apple-system;
+  --font-eyebrow: "DM Sans Variable", system-ui, sans-serif;
+  --font-button: "DM Sans Variable", system-ui, sans-serif;
 
   /* Font sizes (type scale) */
   --font-size-9xl: 8rem;
@@ -242,10 +242,10 @@
   --border-style: solid;
 
   /* Ploy theme colors (light mode) */
-  --ploy-neutral-primary: oklch(1 0 0);
-  --ploy-neutral-secondary: oklch(0.97 0 0);
-  --ploy-neutral-inverse: oklch(0 0 0);
-  --ploy-neutral-light: oklch(1 0 0);
+  --ploy-neutral-primary: oklch(0.975 0.012 78);
+  --ploy-neutral-secondary: oklch(0.945 0.018 72);
+  --ploy-neutral-inverse: oklch(0.235 0.018 58);
+  --ploy-neutral-light: oklch(0.99 0.006 78);
   --ploy-neutral-dark: oklch(0 0 0);
   --ploy-neutral-primary-s0: white;
   --ploy-neutral-primary-s1: var(--ploy-neutral-primary);
@@ -287,14 +287,14 @@
     var(--ploy-neutral-inverse) 30%,
     var(--ploy-neutral-primary)
   );
-  --ploy-accent-primary: oklch(0 0 0);
-  --ploy-accent-secondary: oklch(1 0 0);
-  --ploy-accent-tertiary: oklch(0 0 0);
+  --ploy-accent-primary: oklch(0.43 0.055 110);
+  --ploy-accent-secondary: oklch(0.79 0.045 72);
+  --ploy-accent-tertiary: oklch(0.64 0.045 42);
   --ploy-text-primary: var(--ploy-neutral-inverse);
   --ploy-text-secondary: var(--ploy-neutral-inverse-700);
   --ploy-text-inverse: oklch(1 0 0);
   --ploy-text-inverse-secondary: oklch(1 0 0 / 60%);
-  --ploy-text-on-accent-primary: oklch(1 0 0);
+  --ploy-text-on-accent-primary: oklch(0.99 0.006 78);
   --ploy-text-on-accent-secondary: oklch(1 0 0);
   --ploy-text-on-accent-tertiary: oklch(0 0 0);
   --ploy-button-primary-background: var(--ploy-background-inverse);
