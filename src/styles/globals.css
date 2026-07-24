@@ -287,7 +287,7 @@
     var(--ploy-neutral-inverse) 30%,
     var(--ploy-neutral-primary)
   );
-  --ploy-accent-primary: oklch(0.43 0.055 110);
+  --ploy-accent-primary: oklch(0.295 0.0532 180.99);
   --ploy-accent-secondary: oklch(0.79 0.045 72);
   --ploy-accent-tertiary: oklch(0.64 0.045 42);
   --ploy-text-primary: var(--ploy-neutral-inverse);
