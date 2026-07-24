@@ -104,7 +104,7 @@ function Cta({ children, label, className = "" }: { children: React.ReactNode; l
  * @ployComponentStatus stable
  */
 export function HomePage() {
-  const [lang, setLang] = useState<Lang>("de");
+  const [lang, setLang] = useState<Lang>("en");
   const t = copy[lang];
   const isDe = lang === "de";
   const packages = packagesByLang[lang];
