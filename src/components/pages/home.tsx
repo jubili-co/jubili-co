@@ -114,7 +114,7 @@ export function HomePage() {
   return <div className="min-h-screen bg-ploy-background-primary font-body text-ploy-text-primary selection:bg-ploy-accent-primary selection:text-ploy-text-on-accent-primary">
     <header className="sticky top-0 z-50 border-b border-ploy-border-primary bg-ploy-background-primary/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-10">
-        <a href="#top" className="font-heading text-xl font-semibold tracking-tight">Petrina Salema</a>
+        <a href="#top" className="font-heading text-xl font-semibold tracking-tight">Jubili</a>
         <div className="flex items-center gap-3">
           <button onClick={() => setLang(lang === "de" ? "en" : "de")} className="min-w-10 text-sm font-semibold underline underline-offset-4" aria-label="Sprache wechseln">{lang === "de" ? "EN" : "DE"}</button>
           <Cta label="nav_call" className="hidden sm:inline-flex">{t.navCta}</Cta>
@@ -190,7 +190,7 @@ export function HomePage() {
       <ContactSection lang={lang} title={t.contactTitle} subtitle={t.contactSub} button={t.formButton} success={t.formSuccess} />
     </main>
 
-    <footer className="border-t border-ploy-border-primary px-5 py-8 md:px-10"><div className="mx-auto flex max-w-[1200px] flex-col gap-6 text-sm md:flex-row md:items-center md:justify-between"><div><strong>Petrina Salema</strong><span className="ml-2 text-ploy-text-secondary">Petrina Manase Salema e.U. · Wien</span></div><nav className="flex flex-wrap gap-5"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="LinkedIn">LinkedIn</a><a href="mailto:office@jubili.co">E-Mail</a><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav></div></footer>
+    <footer className="border-t border-ploy-border-primary px-5 py-8 md:px-10"><div className="mx-auto flex max-w-[1200px] flex-col gap-6 text-sm md:flex-row md:items-center md:justify-between"><div><strong>Jubili</strong><span className="ml-2 text-ploy-text-secondary">Petrina Manase Salema e.U. · Wien</span></div><nav className="flex flex-wrap gap-5"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="LinkedIn">LinkedIn</a><a href="mailto:office@jubili.co">E-Mail</a><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav></div></footer>
   </div>;
 }
 
