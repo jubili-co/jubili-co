@@ -34,3 +34,7 @@ wrangler.toml
 
 # temp files
 /tmp
+logs/
+lost+found/
+.ploy/
+ploy.astro.config.mjs
