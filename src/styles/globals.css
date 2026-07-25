@@ -297,9 +297,9 @@
   --ploy-text-on-accent-primary: oklch(0.99 0.006 78);
   --ploy-text-on-accent-secondary: oklch(1 0 0);
   --ploy-text-on-accent-tertiary: oklch(0 0 0);
-  --ploy-button-primary-background: var(--ploy-background-inverse);
-  --ploy-button-primary-text: var(--ploy-background-primary);
-  --ploy-button-primary-border: var(--ploy-text-primary);
+  --ploy-button-primary-background: var(--ploy-accent-primary);
+  --ploy-button-primary-text: var(--ploy-text-on-accent-primary);
+  --ploy-button-primary-border: var(--ploy-accent-primary);
   --ploy-button-secondary-background: var(--ploy-background-primary);
   --ploy-button-secondary-text: var(--ploy-background-inverse);
   --ploy-button-secondary-border: var(--ploy-neutral-inverse-300);
