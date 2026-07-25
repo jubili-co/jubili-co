@@ -112,12 +112,12 @@ export function HomePage() {
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
 
   return <div className="min-h-screen bg-ploy-background-primary font-body text-ploy-text-primary selection:bg-ploy-accent-primary selection:text-ploy-text-on-accent-primary">
-    <header className="sticky top-0 z-50 border-b border-ploy-border-primary bg-ploy-background-primary/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-ploy-accent-primary bg-ploy-accent-primary text-ploy-text-on-accent-primary">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-10">
         <a href="#top" className="inline-flex items-center" aria-label="Jubili home"><img src="https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/ea6375cd-jubili-full-wordmark-green.webp" alt="Jubili" className="h-14 w-40 rounded-[3px] object-cover object-center sm:h-16 sm:w-44" /></a>
         <div className="flex items-center gap-3">
-          <button onClick={() => setLang(lang === "de" ? "en" : "de")} className="min-w-10 text-sm font-semibold underline underline-offset-4" aria-label="Sprache wechseln">{lang === "de" ? "EN" : "DE"}</button>
-          <Cta label="nav_call" className="hidden sm:inline-flex">{t.navCta}</Cta>
+          <button onClick={() => setLang(lang === "de" ? "en" : "de")} className="min-w-10 text-sm font-semibold text-ploy-text-on-accent-primary underline underline-offset-4" aria-label="Sprache wechseln">{lang === "de" ? "EN" : "DE"}</button>
+          <Cta label="nav_call" className="hidden !bg-ploy-background-primary !text-ploy-accent-primary sm:inline-flex">{t.navCta}</Cta>
         </div>
       </div>
     </header>
