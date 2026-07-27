@@ -48,7 +48,7 @@ const copy = {
   en: {
     navCta: "Book a call",
     heroTitle: "Your apartment is finished. Now it has to earn.",
-    heroSub: "Interior concepts, sourcing and styling for furnished rentals in Vienna. By a designer who runs one herself.",
+    heroSub: "Interior concepts, sourcing and styling for furnished rentals in Vienna. By a designer who runs a rental herself.",
     call: "Book a free call",
     heroMeta: "Concepts from €890 · Vienna and nearby · 4–6 week handovers possible",
     doorsTitle: "Where are you now?",
