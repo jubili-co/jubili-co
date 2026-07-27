@@ -198,7 +198,7 @@ export function HomePage() {
       <ContactSection lang={lang} title={t.contactTitle} subtitle={t.contactSub} button={t.formButton} success={t.formSuccess} />
     </main>
 
-    <footer className="border-t border-ploy-border-primary px-5 py-8 md:px-10"><div className="mx-auto flex max-w-[1200px] flex-col gap-6 text-sm md:flex-row md:items-center md:justify-between"><div className="flex items-center gap-3"><strong className="font-heading text-xl">Jubili</strong><span className="text-ploy-text-secondary">Vienna</span></div><nav className="flex flex-wrap gap-5"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="LinkedIn">LinkedIn</a><a href="mailto:office@jubili.co">E-Mail</a><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav></div></footer>
+    <footer className="border-t border-ploy-border-primary px-5 py-8 md:px-10"><div className="mx-auto flex max-w-[1200px] flex-col gap-6 text-sm md:flex-row md:items-center md:justify-between"><div className="flex items-center gap-3"><strong className="font-heading text-xl">Jubili</strong><span className="text-ploy-text-secondary">Vienna</span></div><nav className="flex flex-wrap gap-5"><a href="#" aria-label="Instagram">Instagram</a><a href="mailto:office@jubili.co">Email</a><a href="/impressum">Legal notice</a><a href="/datenschutz">Privacy policy</a></nav></div></footer>
   </div>;
 }
 
