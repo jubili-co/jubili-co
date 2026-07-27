@@ -7,7 +7,8 @@ interface SiteConfig {
 }
 
 export const SITE_CONFIG: SiteConfig = {
-  name: "",
-  description: "",
+  name: "Jubili",
+  description:
+    "Interior concepts, FF&E sourcing and styling for furnished apartments and small hospitality properties in Vienna.",
   sourceSitemapUrl: "",
 };
