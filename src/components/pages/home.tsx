@@ -2,7 +2,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { ArrowDownRight, ArrowRight, Check, ChevronDown } from "lucide-react";
 import { submitForm } from "@/lib/ploy-forms/submit-form";
 
-const HERO_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/7b50d3bc-jubili-living-room-vertical.webp";
+const HERO_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/de5b7165-76.webp";
 const PROOF_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/fe388237-jubili-blue-bedroom-suite.webp";
 const GALLERY_IMAGES = [
   { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/88d9941e-jubili-living-room-wide.webp", alt: "Furnished Jubili living room with staircase", className: "md:col-span-7" },
