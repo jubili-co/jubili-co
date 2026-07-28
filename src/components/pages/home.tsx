@@ -3,7 +3,7 @@ import { ArrowDownRight, ArrowRight, Check, ChevronDown } from "lucide-react";
 import { submitForm } from "@/lib/ploy-forms/submit-form";
 
 const HERO_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/de5b7165-76.webp";
-const PROOF_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/fe388237-jubili-blue-bedroom-suite.webp";
+const PROOF_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/697dc161-14.webp";
 const GALLERY_IMAGES = [
   { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/88d9941e-jubili-living-room-wide.webp", alt: "Furnished Jubili living room with staircase", className: "md:col-span-7" },
   { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/84f9620e-jubili-living-room-overhead.webp", alt: "Jubili living-room furniture layout from above", className: "md:col-span-5" },
