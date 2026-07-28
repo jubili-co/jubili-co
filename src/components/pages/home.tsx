@@ -5,10 +5,10 @@ import { submitForm } from "@/lib/ploy-forms/submit-form";
 const HERO_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/de5b7165-76.webp";
 const PROOF_IMAGE = "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/697dc161-14.webp";
 const GALLERY_IMAGES = [
-  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/88d9941e-jubili-living-room-wide.webp", alt: "Furnished Jubili living room with staircase", className: "md:col-span-7" },
-  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/84f9620e-jubili-living-room-overhead.webp", alt: "Jubili living-room furniture layout from above", className: "md:col-span-5" },
-  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/cc911eac-jubili-blue-room-after.webp", alt: "Finished Jubili attic room with workspace", className: "md:col-span-5" },
-  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/a52eb6a5-jubili-bathroom-after.webp", alt: "Finished Jubili bathroom with practical storage", className: "md:col-span-7" },
+  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/8bb3d42c-image.webp", alt: "Jubili living room opening onto a leafy balcony", className: "md:col-span-7" },
+  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/53498295-balcony-1.webp", alt: "Furnished Jubili balcony with dining table and string lights", className: "md:col-span-5" },
+  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/aa0d2644-2026-07-14-blue-room-after.webp", alt: "Finished Jubili attic room with workspace", className: "md:col-span-5" },
+  { src: "https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/f6712e42-dining-room-1.webp", alt: "Jubili dining room with green gallery wall", className: "md:col-span-7" },
 ];
 
 type Lang = "de" | "en";
