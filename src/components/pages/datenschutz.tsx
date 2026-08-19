@@ -25,7 +25,10 @@ export const DatenschutzPage: FC = () => (
         <h2 className="font-heading text-3xl text-brand-text-primary">
           1. Controller
         </h2>
-        <p>The controller responsible for data processing through this website is:</p>
+        <p>
+          The controller responsible for data processing through this website
+          is:
+        </p>
         <address className="not-italic leading-relaxed text-brand-text-primary">
           Petrina Manase Salema, Sole Proprietor
           <br />
@@ -38,7 +41,10 @@ export const DatenschutzPage: FC = () => (
           Austria
           <br />
           Email:{" "}
-          <a className="underline underline-offset-4" href="mailto:office@jubili.co">
+          <a
+            className="underline underline-offset-4"
+            href="mailto:office@jubili.co"
+          >
             office@jubili.co
           </a>
         </address>
@@ -97,14 +103,35 @@ export const DatenschutzPage: FC = () => (
           4. Analytics
         </h2>
         <p>
-          This website does not currently use an analytics product. It does not
-          use Google Analytics, advertising pixels, session-replay tools, or
-          marketing trackers. Clicks on calls to action are not stored.
+          This website uses PostHog, an analytics service provided by PostHog,
+          Inc., to understand how the site is used: which pages are viewed,
+          which calls to action are clicked, and whether an enquiry is sent.
+          Session replay, advertising pixels, and marketing trackers are not
+          used. Analytics events are sent through this website’s own domain so
+          they are not loaded from a third-party tracking host in the browser.
         </p>
         <p>
-          Ordinary hosting logs described in section 3 may still record that a
-          page was requested. If a dedicated analytics service is introduced,
-          this policy will be updated before or when that processing begins.
+          PostHog is configured in cookieless mode. It does not set analytics
+          cookies or store a tracking identifier in local or session storage.
+          Users are counted with a privacy-preserving hash generated on
+          PostHog’s servers. Name, email address, and free-text messages from
+          the contact form are not sent to PostHog. Non-identifying enquiry
+          metadata such as district, property size, rental type, and furniture
+          budget may be included so conversion paths can be understood.
+        </p>
+        <p>
+          The legal basis is the legitimate interest in operating and improving
+          a useful website and measuring enquiries under Article 6(1)(f) GDPR.
+          You may object to this processing by emailing{" "}
+          <a
+            className="underline underline-offset-4"
+            href="mailto:office@jubili.co"
+          >
+            office@jubili.co
+          </a>
+          . Analytics data is processed in the European Union on PostHog’s EU
+          Cloud. Ordinary hosting logs described in section 3 may still record
+          that a page was requested.
         </p>
       </section>
 
@@ -125,7 +152,9 @@ export const DatenschutzPage: FC = () => (
           <li>handover or availability date;</li>
           <li>rental type and indicative furniture budget;</li>
           <li>the project information included in your message; and</li>
-          <li>technical submission data needed to deliver and protect the form.</li>
+          <li>
+            technical submission data needed to deliver and protect the form.
+          </li>
         </ul>
         <p>
           The legal basis is Article 6(1)(b) GDPR where processing is necessary
@@ -136,10 +165,13 @@ export const DatenschutzPage: FC = () => (
           GDPR.
         </p>
         <p>
-          Form submissions are sent to this website’s own server on Vercel.
-          They are written to hosting logs. They are not forwarded by email
+          Form submissions are sent to this website’s own server on Vercel. They
+          are written to hosting logs. They are not forwarded by email
           automatically. You can also write directly to{" "}
-          <a className="underline underline-offset-4" href="mailto:office@jubili.co">
+          <a
+            className="underline underline-offset-4"
+            href="mailto:office@jubili.co"
+          >
             office@jubili.co
           </a>
           . Enquiry data is not sold or used for unrelated promotional email.
@@ -161,19 +193,23 @@ export const DatenschutzPage: FC = () => (
           Personal data is disclosed only where necessary for the purposes
           described above, where required by law, or where you have separately
           authorised disclosure. Categories of recipients may include website
-          hosting and platform providers, infrastructure and security providers,
-          email and IT service providers, and professional advisers or public
-          authorities where legally required.
+          hosting and platform providers, analytics processors, infrastructure
+          and security providers, email and IT service providers, and
+          professional advisers or public authorities where legally required.
         </p>
         <p>
-          Vercel, Inc. is based in the United States, so hosting may involve
-          processing outside the European Economic Area. Where Chapter V of the
-          GDPR applies to a transfer, the transfer must be based on an
-          applicable adequacy decision or appropriate safeguards, such as the
-          European Commission’s standard contractual clauses, together with any
-          required supplementary measures. You may request further information
-          about applicable safeguards by emailing{" "}
-          <a className="underline underline-offset-4" href="mailto:office@jubili.co">
+          Analytics events are processed by PostHog, Inc. as a processor on
+          PostHog’s EU Cloud. Vercel, Inc. is based in the United States, so
+          hosting may involve processing outside the European Economic Area.
+          Where Chapter V of the GDPR applies to a transfer, the transfer must
+          be based on an applicable adequacy decision or appropriate safeguards,
+          such as the European Commission’s standard contractual clauses,
+          together with any required supplementary measures. You may request
+          further information about applicable safeguards by emailing{" "}
+          <a
+            className="underline underline-offset-4"
+            href="mailto:office@jubili.co"
+          >
             office@jubili.co
           </a>
           .
@@ -185,10 +221,11 @@ export const DatenschutzPage: FC = () => (
           7. Cookies and external services
         </h2>
         <p>
-          This website does not currently use non-essential analytics or
-          marketing cookies. It also does not currently offer a newsletter, send
-          promotional email through a newsletter system, use an external booking
-          tool, or embed third-party video, map, or social-media widgets.
+          This website does not set analytics or marketing cookies. PostHog is
+          used in cookieless mode as described in section 4. The site does not
+          currently offer a newsletter, send promotional email through a
+          newsletter system, use an external booking tool, or embed third-party
+          video, map, or social-media widgets.
         </p>
         <p>
           Ordinary links to another website or an email application do not
@@ -233,11 +270,15 @@ export const DatenschutzPage: FC = () => (
         </ul>
         <p>
           This website does not use automated decision-making or profiling that
-          produces legal or similarly significant effects.
+          produces legal or similarly significant effects. Analytics is limited
+          to anonymous usage measurement and conversion events.
         </p>
         <p>
           To exercise your rights, email{" "}
-          <a className="underline underline-offset-4" href="mailto:office@jubili.co">
+          <a
+            className="underline underline-offset-4"
+            href="mailto:office@jubili.co"
+          >
             office@jubili.co
           </a>
           . Reasonable information may be requested to confirm your identity
@@ -264,7 +305,10 @@ export const DatenschutzPage: FC = () => (
           Austria
           <br />
           Email:{" "}
-          <a className="underline underline-offset-4" href="mailto:dsb@dsb.gv.at">
+          <a
+            className="underline underline-offset-4"
+            href="mailto:dsb@dsb.gv.at"
+          >
             dsb@dsb.gv.at
           </a>
           <br />
