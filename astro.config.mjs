@@ -16,7 +16,7 @@ const viteCacheDir =
 // https://astro.build/config
 export default defineConfig({
   // Set to the production origin so sitemaps and canonical URLs are correct.
-  site: "https://example.com",
+  site: "https://jubili.co",
   output: "server",
   trailingSlash: "never",
   adapter: vercel({ imageService: true }),

@@ -21,7 +21,7 @@ const pagePathForEntryId = (id: string) => {
 };
 
 export const GET: APIRoute = async ({ site }) => {
-  const origin = site?.origin ?? "https://example.com";
+  const origin = site?.origin ?? "https://jubili.co";
   const pages = await getPublishedPages();
 
   const contentLinks = pages
