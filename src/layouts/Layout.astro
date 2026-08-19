@@ -3,6 +3,7 @@ import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/cormorant-garamond";
 import "../styles/globals.css";
 import { SEO } from "@/components/seo";
+import PostHog from "@/components/posthog.astro";
 import { SITE_CONFIG } from "@/site-config";
 import type { SeoJsonSchema } from "@/components/seo-json";
 
@@ -63,6 +64,7 @@ const imageUrl = resolveUrl(image);
       siteName={siteName}
       jsonLd={jsonLd}
     />
+    <PostHog />
     <slot name="head" />
   </head>
   <body>

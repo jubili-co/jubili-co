@@ -260,18 +260,34 @@ Use with react-hook-form + zod for complex validation flows.
 
 ## Analytics
 
-Pageviews are not tracked. Custom events POST to `/api/ingest`, a no-op stub that logs the body and returns 204. Wire Vercel Analytics (or another product) when you want tracking.
+PostHog is wired for this marketing site. It stays dormant until
+`PUBLIC_POSTHOG_PROJECT_TOKEN` is set (local `.env` and Vercel project env).
+The homepage is prerendered, so the token must be present at **build** time
+on Vercel, not only as a runtime secret.
+
+Use the **project API key** (`phc_…`) from PostHog → Project settings. A
+personal API key is not required to capture events. Default host is EU Cloud
+(`https://eu.i.posthog.com`) — create the project at eu.posthog.com.
+
+In PostHog project settings, enable **Cookieless server hash mode** (Web
+analytics). Session replay should stay off. Events are ignored in cookieless
+mode until that setting is on.
 
 ```tsx
-navigator.sendBeacon("/api/ingest", JSON.stringify({
-  type: "track",
-  event: "formSubmitted",
-  properties: { formName: "contact" },
-  timestamp: new Date().toISOString(),
-}));
+import { track } from "@/lib/analytics/client";
+
+track("cta_clicked", { cta: "hero_call" });
 ```
 
-Event types: `page` (automatic), `track` (custom events), `identify` (user association).
+Browser pageviews load from `src/components/posthog.astro` via the shared
+layout. Custom events go through `track()`. Enquiry conversions are captured
+in `/api/form-submit` (name, email, and message are not sent). Requests are
+proxied first-party at `/jbl` so blockers are less likely to drop them —
+`vercel.json` for production, `src/pages/jbl/[...path].ts` for local/dev.
+
+If the project is on US Cloud, set `PUBLIC_POSTHOG_HOST=https://us.i.posthog.com`
+and change the `vercel.json` rewrite destinations to `us-assets.i.posthog.com`
+and `us.i.posthog.com`.
 
 ## Content pages
 
@@ -376,7 +392,7 @@ Prefer `git revert` over reset or force-push.
 
 ### Hosting
 
-This site deploys on Vercel (`@astrojs/vercel`). Contact form and analytics endpoints are stubs — see `src/pages/api/form-submit.ts` and `src/pages/api/ingest.ts`.
+This site deploys on Vercel (`@astrojs/vercel`). The contact form endpoint is a stub — see `src/pages/api/form-submit.ts`. Analytics is PostHog; it is inactive until `PUBLIC_POSTHOG_PROJECT_TOKEN` is set.
 
 ### Troubleshooting
 

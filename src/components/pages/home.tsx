@@ -1,5 +1,6 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowDownRight, ArrowRight, Check, ChevronDown } from "lucide-react";
+import { registerSiteLanguage, track } from "@/lib/analytics/client";
 import { submitForm } from "@/lib/forms/submit-form";
 
 const HERO_IMAGE = "/images/hero.webp";
@@ -91,14 +92,8 @@ const packagesByLang = {
   ],
 };
 
-function track(label: string) {
-  const payload = JSON.stringify({ type: "track", event: label, properties: { label }, timestamp: new Date().toISOString() });
-  // `/api/ingest` is a no-op stub. See src/pages/api/ingest.ts.
-  navigator.sendBeacon("/api/ingest", payload);
-}
-
 function Cta({ children, label, className = "" }: { children: React.ReactNode; label: string; className?: string }) {
-  return <a href="#kontakt" onClick={() => track(label)} className={`inline-flex items-center justify-center gap-2 rounded-[4px] bg-brand-button-primary-background px-5 py-3.5 font-button text-sm font-semibold text-brand-button-primary-text transition-opacity hover:opacity-85 ${className}`}>{children}<ArrowRight size={16} /></a>;
+  return <a href="#kontakt" onClick={() => track("cta_clicked", { cta: label })} className={`inline-flex items-center justify-center gap-2 rounded-[4px] bg-brand-button-primary-background px-5 py-3.5 font-button text-sm font-semibold text-brand-button-primary-text transition-opacity hover:opacity-85 ${className}`}>{children}<ArrowRight size={16} /></a>;
 }
 
 export function HomePage() {
@@ -107,14 +102,21 @@ export function HomePage() {
   const isDe = lang === "de";
   const packages = packagesByLang[lang];
 
-  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    registerSiteLanguage(lang);
+  }, [lang]);
 
   return <div className="min-h-screen bg-brand-background-primary font-body text-brand-text-primary selection:bg-brand-accent-primary selection:text-brand-text-on-accent-primary">
     <header className="sticky top-0 z-50 border-b border-brand-accent-primary bg-brand-accent-primary text-brand-text-on-accent-primary">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-10">
         <a href="#top" className="inline-flex items-center" aria-label="Jubili home"><img src="/images/wordmark.webp" alt="Jubili" className="h-14 w-40 rounded-[3px] object-cover object-center sm:h-16 sm:w-44" /></a>
         <div className="flex items-center gap-3">
-          <button onClick={() => setLang(lang === "de" ? "en" : "de")} className="min-w-10 text-sm font-semibold text-brand-text-on-accent-primary underline underline-offset-4" aria-label="Sprache wechseln">{lang === "de" ? "EN" : "DE"}</button>
+          <button onClick={() => {
+            const next = lang === "de" ? "en" : "de";
+            setLang(next);
+            track("language_changed", { language: next });
+          }} className="min-w-10 text-sm font-semibold text-brand-text-on-accent-primary underline underline-offset-4" aria-label="Sprache wechseln">{lang === "de" ? "EN" : "DE"}</button>
           <Cta label="nav_call" className="hidden !bg-brand-background-primary !text-brand-accent-primary sm:inline-flex">{t.navCta}</Cta>
         </div>
       </div>
@@ -134,7 +136,7 @@ export function HomePage() {
       <section className="border-y border-brand-border-primary bg-brand-background-secondary px-5 py-16 md:px-10 lg:py-24">
         <div className="mx-auto max-w-[1200px]"><h2 className="text-balance font-heading text-4xl md:text-6xl">{t.doorsTitle}</h2><p className="mt-4 max-w-2xl text-brand-text-secondary">{t.doorsIntro}</p>
           <div className="mt-10 grid gap-px bg-brand-border-primary md:grid-cols-2">
-            {[{ href: "#neu-einrichten", title: t.doorA, desc: t.doorADesc, event: "doorA" }, { href: "#umstellen", title: t.doorB, desc: t.doorBDesc, event: "doorB" }].map((door) => <a key={door.event} href={door.href} onClick={() => track(door.event)} className="group bg-brand-background-primary p-7 md:p-10"><div className="flex items-start justify-between gap-5"><div><h3 className="max-w-md font-heading text-3xl md:text-4xl">{door.title}</h3><p className="mt-4 max-w-md leading-relaxed text-brand-text-secondary">{door.desc}</p></div><ArrowDownRight className="shrink-0 transition-transform group-hover:rotate-12" /></div></a>)}
+            {[{ href: "#neu-einrichten", title: t.doorA, desc: t.doorADesc, event: "doorA" }, { href: "#umstellen", title: t.doorB, desc: t.doorBDesc, event: "doorB" }].map((door) => <a key={door.event} href={door.href} onClick={() => track("door_selected", { door: door.event })} className="group bg-brand-background-primary p-7 md:p-10"><div className="flex items-start justify-between gap-5"><div><h3 className="max-w-md font-heading text-3xl md:text-4xl">{door.title}</h3><p className="mt-4 max-w-md leading-relaxed text-brand-text-secondary">{door.desc}</p></div><ArrowDownRight className="shrink-0 transition-transform group-hover:rotate-12" /></div></a>)}
           </div>
         </div>
       </section>
@@ -199,7 +201,7 @@ function ContactSection({ lang, title, subtitle, button, success }: { lang: Lang
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setStatus("sending");
     const data = Object.fromEntries(new FormData(event.currentTarget).entries()) as Record<string, string>;
-    try { await submitForm("wohnung-anfrage", data); track("form_submit"); setStatus("success"); event.currentTarget.reset(); } catch { setStatus("error"); }
+    try { await submitForm("wohnung-anfrage", data); setStatus("success"); event.currentTarget.reset(); } catch { setStatus("error"); }
   }
   return <section id="kontakt" className="scroll-mt-24 px-5 py-20 md:px-10 lg:py-28"><div className="mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[0.8fr_1.2fr]"><div><h2 className="text-balance font-heading text-4xl md:text-6xl">{title}</h2><p className="mt-5 text-lg leading-relaxed text-brand-text-secondary">{subtitle}</p><div className="mt-8"><Cta label="contact_call">{lang === "de" ? "Gespräch buchen" : "Book a call"}</Cta></div></div>
     <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">{[
