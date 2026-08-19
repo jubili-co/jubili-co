@@ -1,26 +1,23 @@
 {
-  "name": "ploy-web",
+  "name": "jubili-co",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3000",
-    "dev:ploy": "astro dev --port 3000 --config ploy.astro.config.mjs",
-    "dev:wrangler": "wrangler dev",
     "check": "astro check",
     "format": "prettier --write .",
     "lint": "eslint .",
     "build": "astro build",
     "verify": "node scripts/verify.mjs",
-    "preview": "wrangler dev --local",
-    "cf-types": "wrangler types",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/mdx": "^5.0.4",
     "@astrojs/react": "^5.0.3",
     "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/vercel": "^10.0.8",
     "@base-ui/react": "^1.1.0",
     "@fontsource-variable/cormorant-garamond": "^5.3.0",
     "@fontsource-variable/dm-sans": "^5.3.0",
@@ -62,8 +59,7 @@
     "prettier": "^3.8.2",
     "prettier-plugin-astro": "^0.14.1",
     "schema-dts": "^2.0.0",
-    "typescript-eslint": "^8.58.2",
-    "wrangler": "^4.84.1"
+    "typescript-eslint": "^8.58.2"
   },
   "overrides": {
     "vite": "^7"

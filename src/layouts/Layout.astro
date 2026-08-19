@@ -2,7 +2,6 @@
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/cormorant-garamond";
 import "../styles/globals.css";
-import { STARTER_VERSION } from "../starter-version";
 import { SEO } from "@/components/seo";
 import { SITE_CONFIG } from "@/site-config";
 import type { SeoJsonSchema } from "@/components/seo-json";
@@ -51,9 +50,8 @@ const imageUrl = resolveUrl(image);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/webp" href="https://storage.googleapis.com/ployai/6d1453e3-c9c4-41e7-931a-adfacef75c3f/user/609ed194-jubili-logo-green.webp" />
+    <link rel="icon" type="image/webp" href="/images/logo.webp" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="ploy-astro-starter-version" content={STARTER_VERSION} />
     <SEO
       title={title}
       description={description}

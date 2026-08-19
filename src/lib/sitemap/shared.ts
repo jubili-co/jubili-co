@@ -32,7 +32,10 @@ export function normalizeSourceUrls(raw: string | string[]): string[] {
 const LOC_RE = /(<(?:loc|image:loc)>)([^<]+)(<\/(?:loc|image:loc)>)/g;
 const XHTML_HREF_RE = /(<xhtml:link\b[^>]*?\bhref=")([^"]+)(")/g;
 
-export function rewriteSitemapDomain(xml: string, targetOrigin: string): string {
+export function rewriteSitemapDomain(
+  xml: string,
+  targetOrigin: string,
+): string {
   const target = new URL(targetOrigin);
 
   const rewriteUrl = (raw: string): string => {
@@ -76,8 +79,7 @@ export async function fetchUpstream(url: string): Promise<string | null> {
   try {
     const res = await fetch(url, {
       headers: { Accept: "application/xml, text/xml" },
-      cf: { cacheTtl: CACHE_SECONDS, cacheEverything: true },
-    } as RequestInit);
+    });
     if (!res.ok) {
       console.warn(`[sitemap-proxy] upstream ${url} returned ${res.status}`);
       return null;

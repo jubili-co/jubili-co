@@ -23,20 +23,16 @@ pnpm-debug.log*
 # cloudflare
 .wrangler
 
+# vercel
+.vercel
+
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
 
-# Ploy discouraged files
-wrangler.toml
-
 # temp files
 /tmp
 logs/
 lost+found/
-.ploy/
-ploy.astro.config.mjs
-ploy.ploydb-client.mjs
-ploy.ploydb-auth-adapter.mjs

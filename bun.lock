@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "ploy-app",
+      "name": "jubili-co",
       "dependencies": {
         "@astrojs/check": "^0.9.8",
         "@astrojs/cloudflare": "^13.1.10",

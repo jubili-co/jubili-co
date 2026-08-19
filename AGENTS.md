@@ -27,7 +27,7 @@ npm run format          # prettier
 | Animations | motion/react                      |
 | Icons      | lucide-react                      |
 | Forms      | react-hook-form + zod             |
-| Deploy     | Cloudflare Workers                |
+| Deploy     | Vercel                            |
 
 **Tailwind v4:** Config lives in `src/styles/globals.css`, not a config file.
 
@@ -103,7 +103,7 @@ export const prerender = true;
 
 `astro.config.mjs` is wired up with the `sitemapWithCustomPages` helper (`src/lib/sitemap/sitemap-with-custom-pages-plugin.ts`) — a thin wrapper around `@astrojs/sitemap` that emits `sitemap-index.xml` at build. `src/pages/robots.txt.ts` points crawlers at it. Anything prerendered is auto-included; SSR routes aren't, so their paths are enumerated in `get-sitemap-paths.ts` (below).
 
-**Ploy patches the `site:` literal** in `astro.config.mjs` to the tenant's domain at deploy time. Don't replace it with an env-var lookup — the AST patcher needs a string literal, and it only rewrites that one literal (so `${site}/...` elsewhere in the config never gets patched). The helper works around this with a placeholder host that gets rewritten at sitemap-emit time.
+Set `site` in `astro.config.mjs` to the production origin so sitemaps and canonical URLs are correct.
 
 ### SSR dynamic routes
 
@@ -124,7 +124,7 @@ export function getSitemapPaths(): string[] {
 
 ### Sitemap proxy (reverse-proxy tenants)
 
-For tenants reverse-proxying an existing site at a different origin, set `SITE_CONFIG.sourceSitemapUrl` to that origin's sitemap URL. `/sitemap.xml` then mirrors it with every URL's host rewritten to the live Ploy domain. It's **request-time (SSR)** with a ~1h edge cache (Cloudflare `cf.cacheTtl`), so upstream page edits propagate without redeploying. A `<sitemapindex>` source is mirrored structurally via the `/proxied-sitemap-[i].xml` route (one entry per upstream entry); pass an array of URLs instead if the upstream has no single root sitemap. Nested indexes are intentionally unsupported (the entry route fails safe to an empty sitemap), as is a non-XML upstream response.
+For tenants reverse-proxying an existing site at a different origin, set `SITE_CONFIG.sourceSitemapUrl` to that origin's sitemap URL. `/sitemap.xml` then mirrors it with every URL's host rewritten to this site's domain. It's **request-time (SSR)** with a 1h `Cache-Control`, so upstream page edits propagate without redeploying. A `<sitemapindex>` source is mirrored structurally via the `/proxied-sitemap-[i].xml` route (one entry per upstream entry); pass an array of URLs instead if the upstream has no single root sitemap. Nested indexes are intentionally unsupported (the entry route fails safe to an empty sitemap), as is a non-XML upstream response.
 
 `sitemapWithCustomPages` injects both routes only when `sourceSitemapUrl` is set, and `robots.txt` advertises `/sitemap.xml` alongside the build-time `sitemap-index.xml` (which still covers the tenant's own prerendered pages). Leave `sourceSitemapUrl` empty to disable. The runtime is split across `src/lib/sitemap/sitemap.ts` (the `/sitemap.xml` route), `src/lib/sitemap/proxy-sitemap.ts` (the per-entry `/proxied-sitemap-[i].xml` route), and `src/lib/sitemap/shared.ts` (fetch / parse / rewrite helpers).
 
@@ -136,18 +136,18 @@ For tenants reverse-proxying an existing site at a different origin, set `SITE_C
 - **Responsive styling:** use Tailwind breakpoints (`md:`, `lg:`), not `useEffect` + `matchMedia`.
 - **Icons:** use `lucide-react`, not emoji.
 
-## Styling with ploy tokens
+## Styling with brand tokens
 
-All colors use the `ploy-*` token system defined in `globals.css`. Grep `@theme` in `globals.css` to see available tokens. Always use token classes (`bg-ploy-accent-primary`), never raw `var()` refs or hex values. If a shade doesn't exist, add it to `@theme`.
+All colors use the `brand-*` token system defined in `globals.css`. Grep `@theme` in `globals.css` to see available tokens. Always use token classes (`bg-brand-accent-primary`), never raw `var()` refs or hex values. If a shade doesn't exist, add it to `@theme`.
 
 ### Reach-for hierarchy
 
 Pick the highest tier that expresses your intent. Drop a tier only when the one above can't carry the meaning.
 
-1. **Semantic aliases** — `bg-ploy-background-primary`, `text-ploy-text-primary`, `border-ploy-border-primary`, `ploy-button-primary-*`. Default choice. Binds to role and swaps correctly across themes.
-2. **Surface slots (S0–S5)** — `bg-ploy-neutral-primary-s0` … `-s5`. For layered surfaces that must stay visually distinct as they stack (nested cards, popovers, hovered rows).
-3. **Base neutrals / accents** — `bg-ploy-neutral-primary`, `bg-ploy-accent-primary`. For brand/CTA moments where you want the exact root color, not a surface layer.
-4. **Color scales (50–950)** — `bg-ploy-accent-primary-500`, `bg-ploy-neutral-primary-100`. For specific shades, gradients, or when opacity doesn't give enough contrast.
+1. **Semantic aliases** — `bg-brand-background-primary`, `text-brand-text-primary`, `border-brand-border-primary`, `brand-button-primary-*`. Default choice. Binds to role and swaps correctly across themes.
+2. **Surface slots (S0–S5)** — `bg-brand-neutral-primary-s0` … `-s5`. For layered surfaces that must stay visually distinct as they stack (nested cards, popovers, hovered rows).
+3. **Base neutrals / accents** — `bg-brand-neutral-primary`, `bg-brand-accent-primary`. For brand/CTA moments where you want the exact root color, not a surface layer.
+4. **Color scales (50–950)** — `bg-brand-accent-primary-500`, `bg-brand-neutral-primary-100`. For specific shades, gradients, or when opacity doesn't give enough contrast.
 
 **Hover states:** Prefer opacity first (`hover:bg-primary/90`). Fall back to scales when opacity reveals content underneath.
 
@@ -156,7 +156,7 @@ Pick the highest tier that expresses your intent. Drop a tier only when the one 
 | Slot | Role              | Typical use                                   |
 | ---- | ----------------- | --------------------------------------------- |
 | `s0` | Highlight         | Sticky top bar, lifted element above the page |
-| `s1` | Base surface      | Page background (= `ploy-neutral-primary`)    |
+| `s1` | Base surface      | Page background (= `brand-neutral-primary`)    |
 | `s2` | Alternate surface | Cards, alternating sections                   |
 | `s3` | Elevated surface  | Popovers, nested cards, menus                 |
 | `s4` | Stronger contrast | Input wells, inset regions                    |
@@ -166,14 +166,14 @@ Pick the highest tier that expresses your intent. Drop a tier only when the one 
 
 | Group       | Examples                                                     | Use for                   |
 | ----------- | ------------------------------------------------------------ | ------------------------- |
-| Backgrounds | `bg-ploy-background-primary`, `-secondary`, `-inverse`       | Page/section backgrounds  |
-| Text        | `text-ploy-text-primary`, `-secondary`, `-inverse`           | Body copy                 |
-| Accents     | `bg-ploy-accent-primary`, `-secondary`, `-tertiary`          | Brand/CTA colors          |
-| Surfaces    | `bg-ploy-neutral-primary-s0` … `-s5`                         | Layered surfaces (depth)  |
-| Buttons     | `bg-ploy-button-primary-background`, `text-ploy-button-primary-text` | Button styling    |
-| Borders     | `border-ploy-border-primary`                                 | Dividers, outlines        |
-| Neutrals    | `bg-ploy-neutral-primary`, `-secondary`, `-inverse`          | Surface colors            |
-| Scales      | `bg-ploy-accent-primary-500`, `bg-ploy-neutral-primary-100`  | Specific shades, gradients |
+| Backgrounds | `bg-brand-background-primary`, `-secondary`, `-inverse`       | Page/section backgrounds  |
+| Text        | `text-brand-text-primary`, `-secondary`, `-inverse`           | Body copy                 |
+| Accents     | `bg-brand-accent-primary`, `-secondary`, `-tertiary`          | Brand/CTA colors          |
+| Surfaces    | `bg-brand-neutral-primary-s0` … `-s5`                         | Layered surfaces (depth)  |
+| Buttons     | `bg-brand-button-primary-background`, `text-brand-button-primary-text` | Button styling    |
+| Borders     | `border-brand-border-primary`                                 | Dividers, outlines        |
+| Neutrals    | `bg-brand-neutral-primary`, `-secondary`, `-inverse`          | Surface colors            |
+| Scales      | `bg-brand-accent-primary-500`, `bg-brand-neutral-primary-100`  | Specific shades, gradients |
 
 ## Component patterns
 
@@ -208,7 +208,7 @@ When a prop maps to className combinations, use `class-variance-authority`. See 
 
 ### Base components
 
-Check `src/components/ui/` first — the component may already exist. If not, **prefer building a brand-adapted base component** that follows shadcn/ui conventions (composition, `cn()` + CVA variants, `forwardRef`, named exports) and uses the ploy token system for styling.
+Check `src/components/ui/` first — the component may already exist. If not, **prefer building a brand-adapted base component** that follows shadcn/ui conventions (composition, `cn()` + CVA variants, `forwardRef`, named exports) and uses the brand token system for styling.
 
 Reach for shadcn/ui itself when it's a better fit — complex primitives (dialogs, popovers, comboboxes) where reimplementing accessibility and interaction would be wasteful. Install it, then adapt it to the brand tokens:
 
@@ -246,35 +246,24 @@ import { motion } from "motion/react";
 
 ## Forms
 
-### PloyForm (simple HTML forms in .astro)
-
-```astro
-<PloyForm name="contact" successMessage="Thanks!">
-  <input name="email" type="email" required />
-  <button type="submit">Send</button>
-</PloyForm>
-```
-
-Submits via fetch to `/_ploy/form-submit`. No page reload.
-
 ### submitForm (React forms)
 
 ```tsx
-import { submitForm } from "@/lib/ploy-forms/submit-form";
+import { submitForm } from "@/lib/forms/submit-form";
 
 await submitForm("signup", { email, plan });
 ```
+
+Posts to `/api/form-submit`. That route is a stub: it logs the payload and does not send email.
 
 Use with react-hook-form + zod for complex validation flows.
 
 ## Analytics
 
-Pageviews and SPA navigation are tracked automatically — no code needed. The Ploy platform injects the analytics script at the edge.
-
-To track custom events:
+Pageviews are not tracked. Custom events POST to `/api/ingest`, a no-op stub that logs the body and returns 204. Wire Vercel Analytics (or another product) when you want tracking.
 
 ```tsx
-navigator.sendBeacon("/_ploy/ingest", JSON.stringify({
+navigator.sendBeacon("/api/ingest", JSON.stringify({
   type: "track",
   event: "formSubmitted",
   properties: { formName: "contact" },
@@ -343,30 +332,11 @@ Keep MDX content lightweight. Avoid importing client-heavy React components into
 
 For simple site search, searching title, description/summary, and body is acceptable. For production-grade search, prefer a normalized or indexed search layer rather than expanding ad hoc string matching in route files.
 
-## Working with Git and the Ploy GitHub Integration
+## Working with Git
 
-See: [GitHub Integration](https://docs.ploy.ai/integrations/#development)
+Treat git as durable site history. Prefer forward-moving commits.
 
-This repository may be edited from a Ploy sandbox or from a direct GitHub
-checkout. Treat git as shared durable site history, not as a private scratch
-branch. Prefer forward-moving history so Ploy and direct editors can reconcile
-cleanly.
-
-### Identify Your Editing Context
-
-Before choosing a git workflow, identify where you are running. The files may
-look the same, but remotes, local git config, and save behavior can differ.
-
-Start with `git remote -v`. A direct checkout normally points at `github.com`.
-A Ploy sandbox normally uses a Ploy-managed remote instead of the direct GitHub
-URL.
-
-If you are Korra working in a Ploy workspace, treat that as the Ploy sandbox
-context.
-
-### Safe Inspection
-
-These commands are safe when you need context:
+### Safe inspection
 
 ```bash
 git status --short --branch
@@ -374,29 +344,11 @@ git log --oneline --decorate -20
 git diff
 git show <sha>
 git fetch --all --prune
-git config --local --list
 ```
 
-Use them before broad edits, especially when a user mentions GitHub, rollback,
-restore, missing sections, or unexpected overwrites.
+### Publishing
 
-### Editing Inside a Ploy Sandbox
-
-Ploy automatically saves sandbox changes and may sync them to the remote in the
-background. Prefer normal file edits plus Ploy's save/checkpoint flow.
-
-- Use Ploy save/checkpoint for intentional versions. It may run git operations
-  for you.
-- Do not create shell git commits or push to `main` from inside Ploy unless the
-  user explicitly asks for git recovery.
-- Do not assume a Ploy checkpoint hash is the GitHub hash. Verify the visible
-  git state when the exact commit matters.
-- Keep changes small and coherent.
-
-### Editing a Direct GitHub Checkout
-
-When a user asks you to edit or publish from a direct clone, pushing to `main` is
-allowed as a normal forward-moving operation:
+When asked to publish from this checkout:
 
 1. Fetch first: `git fetch origin main`.
 2. Confirm the local branch is based on the current `origin/main`.
@@ -404,16 +356,9 @@ allowed as a normal forward-moving operation:
 4. Run `npm run verify`.
 5. Push with a normal fast-forward push, for example `git push origin main`.
 
-If the direct checkout is behind, update from `origin/main` before committing or
-stop and explain the divergence. Do not use force-push to make a local checkout
-"win" over GitHub.
+Do not force-push to make a local checkout win over GitHub.
 
-After a normal push to `main`, Ploy should pick up the updated remote history for
-the site. This may be asynchronous, so before making more edits inside Ploy,
-verify that Ploy shows the expected latest commit or use the visible sync/refresh
-control.
-
-### Commands That Need Explicit Recovery Intent
+### Commands that need explicit recovery intent
 
 Do not run these during ordinary site editing:
 
@@ -427,48 +372,21 @@ git checkout <sha> -- .
 git restore .
 ```
 
-Only use them when the user explicitly asks for git recovery and you have
-verified the visible Ploy/repo state first. A normal `git push origin main` from
-a direct checkout is fine after the user asks you to publish and verification
-passes.
+Prefer `git revert` over reset or force-push.
 
-### Rollback and Recovery
+### Hosting
 
-When a user asks to recover to a commit hash, restore from GitHub, undo broad
-changes, or fix unexpected overwrites:
-
-1. Stop and inspect state before editing: `git status --short --branch`,
-   `git log --oneline --decorate -20`, and the target commit with `git show`.
-2. Prefer a forward recovery commit: use `git revert` or Ploy's restore/checkpoint
-   flow instead of `git reset` or force-push.
-3. If the remote was intentionally force-pushed or rewound, fetch first and make
-   sure the workspace is based on the desired remote head before new edits.
-4. After recovery, avoid additional edits until the user confirms the recovered
-   site is the desired starting point.
-5. If local state, GitHub state, and Ploy state disagree, report the exact
-   commits and ask for confirmation instead of guessing.
-
-### Deploying outside of Ploy is Unsupported
-
-We support local editing of their Ploy site. However, publishing the Ploy-built site outside of our platform is possible but not a supported use case. We also cannot guarantee that your edits will be valid when sync'ed back into the Ploy editor and web preview.
-
-If you use the Ploy site's [GitHub Integration](https://docs.ploy.ai/integrations/#development) to `git clone` to the repo to your own computer, here are some recommended workflows:
-
-1. If you want to add third party GitHub Integrations to this project, please fork/mirror the repo to your own GitHub organization where you can self approve any integrations.
-2. If you want to publish to your own Cloudflare Workers, perhaps as a self-hosted preview environment, we discourage `git add` your own `wrangler.toml|jsonc` files or changes to this repo. Doing so will conflict with Ploy's publishing platform assumptions. To publish to your own Workers, point at a config file maintained outside the repo, e.g. `wrangler deploy --config /some/path/outside/repo/wrangler.toml` where you maintain your own configs.
-3. If you want to publish the site to other platforms, please consult their respective docs.
+This site deploys on Vercel (`@astrojs/vercel`). Contact form and analytics endpoints are stubs — see `src/pages/api/form-submit.ts` and `src/pages/api/ingest.ts`.
 
 ### Troubleshooting
 
 #### package.json edits
 
-Please do not edit the `scripts` in `package.json`, this will most likely disable your Ploy deployment.
+Keep `dev`, `build`, `check`, and `verify` working. Vercel runs `npm run build`.
 
 #### frontend rendering issues
 
-The Ploy sandbox for the site may be stale or outdated vs the `package.json` specifications.
-
-Try `rm -rf ./node_modules` and then `npm|bun install` again to refresh the local package.
+Try `rm -rf ./node_modules` and then `npm install` again to refresh the local package.
 
 You should try to do this before any extensive debugging.
 

@@ -10,9 +10,9 @@ export default [
 		ignores: [
 			"dist/",
 			".astro/",
+			".vercel/",
 			".wrangler/",
 			"node_modules/",
-			"worker-configuration.d.ts",
 		],
 	},
 	js.configs.recommended,

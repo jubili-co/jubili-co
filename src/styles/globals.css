@@ -5,44 +5,44 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Color bindings (theme tokens — ploy- prefix is standard) */
-  --color-ploy-neutral-primary: var(--ploy-neutral-primary);
-  --color-ploy-neutral-secondary: var(--ploy-neutral-secondary);
-  --color-ploy-neutral-inverse: var(--ploy-neutral-inverse);
-  --color-ploy-neutral-light: var(--ploy-neutral-light);
-  --color-ploy-neutral-dark: var(--ploy-neutral-dark);
-  --color-ploy-accent-primary: var(--ploy-accent-primary);
-  --color-ploy-accent-secondary: var(--ploy-accent-secondary);
-  --color-ploy-accent-tertiary: var(--ploy-accent-tertiary);
-  --color-ploy-text-primary: var(--ploy-text-primary);
-  --color-ploy-text-secondary: var(--ploy-text-secondary);
-  --color-ploy-text-inverse: var(--ploy-text-inverse);
-  --color-ploy-text-inverse-secondary: var(--ploy-text-inverse-secondary);
-  --color-ploy-text-on-accent-primary: var(--ploy-text-on-accent-primary);
-  --color-ploy-text-on-accent-secondary: var(--ploy-text-on-accent-secondary);
-  --color-ploy-text-on-accent-tertiary: var(--ploy-text-on-accent-tertiary);
-  --color-ploy-button-primary-background: var(--ploy-button-primary-background);
-  --color-ploy-button-primary-text: var(--ploy-button-primary-text);
-  --color-ploy-button-primary-border: var(--ploy-button-primary-border);
-  --color-ploy-button-secondary-background: var(
-    --ploy-button-secondary-background
+  /* Color bindings (theme tokens — brand- prefix is standard) */
+  --color-brand-neutral-primary: var(--brand-neutral-primary);
+  --color-brand-neutral-secondary: var(--brand-neutral-secondary);
+  --color-brand-neutral-inverse: var(--brand-neutral-inverse);
+  --color-brand-neutral-light: var(--brand-neutral-light);
+  --color-brand-neutral-dark: var(--brand-neutral-dark);
+  --color-brand-accent-primary: var(--brand-accent-primary);
+  --color-brand-accent-secondary: var(--brand-accent-secondary);
+  --color-brand-accent-tertiary: var(--brand-accent-tertiary);
+  --color-brand-text-primary: var(--brand-text-primary);
+  --color-brand-text-secondary: var(--brand-text-secondary);
+  --color-brand-text-inverse: var(--brand-text-inverse);
+  --color-brand-text-inverse-secondary: var(--brand-text-inverse-secondary);
+  --color-brand-text-on-accent-primary: var(--brand-text-on-accent-primary);
+  --color-brand-text-on-accent-secondary: var(--brand-text-on-accent-secondary);
+  --color-brand-text-on-accent-tertiary: var(--brand-text-on-accent-tertiary);
+  --color-brand-button-primary-background: var(--brand-button-primary-background);
+  --color-brand-button-primary-text: var(--brand-button-primary-text);
+  --color-brand-button-primary-border: var(--brand-button-primary-border);
+  --color-brand-button-secondary-background: var(
+    --brand-button-secondary-background
   );
-  --color-ploy-button-secondary-text: var(--ploy-button-secondary-text);
-  --color-ploy-button-secondary-border: var(--ploy-button-secondary-border);
-  --color-ploy-background-primary: var(--ploy-background-primary);
-  --color-ploy-background-secondary: var(--ploy-background-secondary);
-  --color-ploy-background-accent-primary: var(--ploy-background-accent-primary);
-  --color-ploy-background-accent-secondary: var(
-    --ploy-background-accent-secondary
+  --color-brand-button-secondary-text: var(--brand-button-secondary-text);
+  --color-brand-button-secondary-border: var(--brand-button-secondary-border);
+  --color-brand-background-primary: var(--brand-background-primary);
+  --color-brand-background-secondary: var(--brand-background-secondary);
+  --color-brand-background-accent-primary: var(--brand-background-accent-primary);
+  --color-brand-background-accent-secondary: var(
+    --brand-background-accent-secondary
   );
-  --color-ploy-background-accent-tertiary: var(
-    --ploy-background-accent-tertiary
+  --color-brand-background-accent-tertiary: var(
+    --brand-background-accent-tertiary
   );
-  --color-ploy-background-inverse: var(--ploy-background-inverse);
-  --color-ploy-border-primary: var(--ploy-border-primary);
-  --color-ploy-border-inverse: var(--ploy-border-inverse);
-  --color-ploy-input-background: var(--ploy-input-background);
-  --color-ploy-input-border: var(--ploy-input-border);
+  --color-brand-background-inverse: var(--brand-background-inverse);
+  --color-brand-border-primary: var(--brand-border-primary);
+  --color-brand-border-inverse: var(--brand-border-inverse);
+  --color-brand-input-background: var(--brand-input-background);
+  --color-brand-input-border: var(--brand-input-border);
 
   /* shadcn standard color bindings */
   --color-destructive: var(--destructive);
@@ -75,39 +75,39 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Color scale bindings (50-950 for neutrals and accents) */
-  --color-ploy-neutral-primary-50: var(--ploy-neutral-primary-50);
-  --color-ploy-neutral-primary-100: var(--ploy-neutral-primary-100);
-  --color-ploy-neutral-primary-200: var(--ploy-neutral-primary-200);
-  --color-ploy-neutral-primary-300: var(--ploy-neutral-primary-300);
-  --color-ploy-neutral-primary-400: var(--ploy-neutral-primary-400);
-  --color-ploy-neutral-primary-500: var(--ploy-neutral-primary-500);
-  --color-ploy-neutral-primary-600: var(--ploy-neutral-primary-600);
-  --color-ploy-neutral-primary-700: var(--ploy-neutral-primary-700);
-  --color-ploy-neutral-primary-800: var(--ploy-neutral-primary-800);
-  --color-ploy-neutral-primary-900: var(--ploy-neutral-primary-900);
-  --color-ploy-neutral-primary-950: var(--ploy-neutral-primary-950);
-  --color-ploy-accent-primary-50: var(--ploy-accent-primary-50);
-  --color-ploy-accent-primary-100: var(--ploy-accent-primary-100);
-  --color-ploy-accent-primary-200: var(--ploy-accent-primary-200);
-  --color-ploy-accent-primary-300: var(--ploy-accent-primary-300);
-  --color-ploy-accent-primary-400: var(--ploy-accent-primary-400);
-  --color-ploy-accent-primary-500: var(--ploy-accent-primary-500);
-  --color-ploy-accent-primary-600: var(--ploy-accent-primary-600);
-  --color-ploy-accent-primary-700: var(--ploy-accent-primary-700);
-  --color-ploy-accent-primary-800: var(--ploy-accent-primary-800);
-  --color-ploy-accent-primary-900: var(--ploy-accent-primary-900);
-  --color-ploy-accent-primary-950: var(--ploy-accent-primary-950);
-  --color-ploy-accent-secondary-50: var(--ploy-accent-secondary-50);
-  --color-ploy-accent-secondary-100: var(--ploy-accent-secondary-100);
-  --color-ploy-accent-secondary-200: var(--ploy-accent-secondary-200);
-  --color-ploy-accent-secondary-300: var(--ploy-accent-secondary-300);
-  --color-ploy-accent-secondary-400: var(--ploy-accent-secondary-400);
-  --color-ploy-accent-secondary-500: var(--ploy-accent-secondary-500);
-  --color-ploy-accent-secondary-600: var(--ploy-accent-secondary-600);
-  --color-ploy-accent-secondary-700: var(--ploy-accent-secondary-700);
-  --color-ploy-accent-secondary-800: var(--ploy-accent-secondary-800);
-  --color-ploy-accent-secondary-900: var(--ploy-accent-secondary-900);
-  --color-ploy-accent-secondary-950: var(--ploy-accent-secondary-950);
+  --color-brand-neutral-primary-50: var(--brand-neutral-primary-50);
+  --color-brand-neutral-primary-100: var(--brand-neutral-primary-100);
+  --color-brand-neutral-primary-200: var(--brand-neutral-primary-200);
+  --color-brand-neutral-primary-300: var(--brand-neutral-primary-300);
+  --color-brand-neutral-primary-400: var(--brand-neutral-primary-400);
+  --color-brand-neutral-primary-500: var(--brand-neutral-primary-500);
+  --color-brand-neutral-primary-600: var(--brand-neutral-primary-600);
+  --color-brand-neutral-primary-700: var(--brand-neutral-primary-700);
+  --color-brand-neutral-primary-800: var(--brand-neutral-primary-800);
+  --color-brand-neutral-primary-900: var(--brand-neutral-primary-900);
+  --color-brand-neutral-primary-950: var(--brand-neutral-primary-950);
+  --color-brand-accent-primary-50: var(--brand-accent-primary-50);
+  --color-brand-accent-primary-100: var(--brand-accent-primary-100);
+  --color-brand-accent-primary-200: var(--brand-accent-primary-200);
+  --color-brand-accent-primary-300: var(--brand-accent-primary-300);
+  --color-brand-accent-primary-400: var(--brand-accent-primary-400);
+  --color-brand-accent-primary-500: var(--brand-accent-primary-500);
+  --color-brand-accent-primary-600: var(--brand-accent-primary-600);
+  --color-brand-accent-primary-700: var(--brand-accent-primary-700);
+  --color-brand-accent-primary-800: var(--brand-accent-primary-800);
+  --color-brand-accent-primary-900: var(--brand-accent-primary-900);
+  --color-brand-accent-primary-950: var(--brand-accent-primary-950);
+  --color-brand-accent-secondary-50: var(--brand-accent-secondary-50);
+  --color-brand-accent-secondary-100: var(--brand-accent-secondary-100);
+  --color-brand-accent-secondary-200: var(--brand-accent-secondary-200);
+  --color-brand-accent-secondary-300: var(--brand-accent-secondary-300);
+  --color-brand-accent-secondary-400: var(--brand-accent-secondary-400);
+  --color-brand-accent-secondary-500: var(--brand-accent-secondary-500);
+  --color-brand-accent-secondary-600: var(--brand-accent-secondary-600);
+  --color-brand-accent-secondary-700: var(--brand-accent-secondary-700);
+  --color-brand-accent-secondary-800: var(--brand-accent-secondary-800);
+  --color-brand-accent-secondary-900: var(--brand-accent-secondary-900);
+  --color-brand-accent-secondary-950: var(--brand-accent-secondary-950);
 
   /* Radius bindings (semantic — fallback to base --radius) */
   --radius-button: var(--radius-button, var(--radius));
@@ -139,56 +139,56 @@
 }
 
 /* ============================================
-   shadcn → ploy- token aliases
-   Maps shadcn's standard variable names to the ploy- design system.
-   Lives outside ploy-theme-start/end so it survives tenant theme injection.
+   shadcn → brand- token aliases
+   Maps shadcn's standard variable names to the brand- design system.
+   Lives outside brand-theme-start/end so it survives tenant theme injection.
    ============================================ */
 :root {
   /* Core */
-  --background: var(--ploy-background-primary);
-  --foreground: var(--ploy-text-primary);
+  --background: var(--brand-background-primary);
+  --foreground: var(--brand-text-primary);
 
   /* Card */
-  --card: var(--ploy-background-secondary);
-  --card-foreground: var(--ploy-text-primary);
+  --card: var(--brand-background-secondary);
+  --card-foreground: var(--brand-text-primary);
 
   /* Popover */
-  --popover: var(--ploy-background-primary);
-  --popover-foreground: var(--ploy-text-primary);
+  --popover: var(--brand-background-primary);
+  --popover-foreground: var(--brand-text-primary);
 
   /* Primary (accent/brand — buttons, checkboxes, active states) */
-  --primary: var(--ploy-accent-primary);
-  --primary-foreground: var(--ploy-text-on-accent-primary);
+  --primary: var(--brand-accent-primary);
+  --primary-foreground: var(--brand-text-on-accent-primary);
 
   /* Secondary (subtle backgrounds) */
-  --secondary: var(--ploy-background-secondary);
-  --secondary-foreground: var(--ploy-text-primary);
+  --secondary: var(--brand-background-secondary);
+  --secondary-foreground: var(--brand-text-primary);
 
   /* Muted (de-emphasized content) */
-  --muted: var(--ploy-background-secondary);
-  --muted-foreground: var(--ploy-text-secondary);
+  --muted: var(--brand-background-secondary);
+  --muted-foreground: var(--brand-text-secondary);
 
   /* Accent (hover states, highlighted items — maps to accent-secondary brand color) */
-  --accent: var(--ploy-accent-secondary);
-  --accent-foreground: var(--ploy-text-on-accent-secondary);
+  --accent: var(--brand-accent-secondary);
+  --accent-foreground: var(--brand-text-on-accent-secondary);
 
   /* Form inputs */
-  --input: var(--ploy-input-border);
-  --border: var(--ploy-border-primary);
-  --ring: var(--ploy-accent-primary);
+  --input: var(--brand-input-border);
+  --border: var(--brand-border-primary);
+  --ring: var(--brand-accent-primary);
 
   /* Sidebar */
-  --sidebar: var(--ploy-background-secondary);
-  --sidebar-foreground: var(--ploy-text-primary);
-  --sidebar-primary: var(--ploy-accent-primary);
-  --sidebar-primary-foreground: var(--ploy-text-on-accent-primary);
-  --sidebar-accent: var(--ploy-background-secondary);
-  --sidebar-accent-foreground: var(--ploy-text-primary);
-  --sidebar-border: var(--ploy-border-primary);
-  --sidebar-ring: var(--ploy-accent-primary);
+  --sidebar: var(--brand-background-secondary);
+  --sidebar-foreground: var(--brand-text-primary);
+  --sidebar-primary: var(--brand-accent-primary);
+  --sidebar-primary-foreground: var(--brand-text-on-accent-primary);
+  --sidebar-accent: var(--brand-background-secondary);
+  --sidebar-accent-foreground: var(--brand-text-primary);
+  --sidebar-border: var(--brand-border-primary);
+  --sidebar-ring: var(--brand-accent-primary);
 }
 
-/* ploy-theme-start */
+/* brand-theme-start */
 :root {
   /* ============================================
      PLACEHOLDER THEME — TODO: Replace with workspace brand radius and colors (light mode)
@@ -235,307 +235,307 @@
   --font-button-line-height: 1;
 
   /* Shadows */
-  --ploy-shadow-color: var(--ploy-border-primary);
+  --brand-shadow-color: var(--brand-border-primary);
 
   /* Borders */
   --border-width: 1px;
   --border-style: solid;
 
-  /* Ploy theme colors (light mode) */
-  --ploy-neutral-primary: oklch(0.975 0.012 78);
-  --ploy-neutral-secondary: oklch(0.945 0.018 72);
-  --ploy-neutral-inverse: oklch(0.235 0.018 58);
-  --ploy-neutral-light: oklch(0.99 0.006 78);
-  --ploy-neutral-dark: oklch(0 0 0);
-  --ploy-neutral-primary-s0: white;
-  --ploy-neutral-primary-s1: var(--ploy-neutral-primary);
-  --ploy-neutral-primary-s2: var(--ploy-neutral-secondary);
-  --ploy-neutral-primary-s3: color-mix(
+  /* Theme colors (light mode) */
+  --brand-neutral-primary: oklch(0.975 0.012 78);
+  --brand-neutral-secondary: oklch(0.945 0.018 72);
+  --brand-neutral-inverse: oklch(0.235 0.018 58);
+  --brand-neutral-light: oklch(0.99 0.006 78);
+  --brand-neutral-dark: oklch(0 0 0);
+  --brand-neutral-primary-s0: white;
+  --brand-neutral-primary-s1: var(--brand-neutral-primary);
+  --brand-neutral-primary-s2: var(--brand-neutral-secondary);
+  --brand-neutral-primary-s3: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 95%,
-    var(--ploy-neutral-inverse)
+    var(--brand-neutral-primary) 95%,
+    var(--brand-neutral-inverse)
   );
-  --ploy-neutral-primary-s4: color-mix(
+  --brand-neutral-primary-s4: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 88%,
-    var(--ploy-neutral-inverse)
+    var(--brand-neutral-primary) 88%,
+    var(--brand-neutral-inverse)
   );
-  --ploy-neutral-primary-s5: color-mix(
+  --brand-neutral-primary-s5: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 76%,
-    var(--ploy-neutral-inverse)
+    var(--brand-neutral-primary) 76%,
+    var(--brand-neutral-inverse)
   );
-  --ploy-neutral-inverse-s0: black;
-  --ploy-neutral-inverse-s1: var(--ploy-neutral-inverse);
-  --ploy-neutral-inverse-s2: color-mix(
+  --brand-neutral-inverse-s0: black;
+  --brand-neutral-inverse-s1: var(--brand-neutral-inverse);
+  --brand-neutral-inverse-s2: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 84%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 84%,
+    var(--brand-neutral-primary)
   );
-  --ploy-neutral-inverse-s3: color-mix(
+  --brand-neutral-inverse-s3: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 66%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 66%,
+    var(--brand-neutral-primary)
   );
-  --ploy-neutral-inverse-s4: color-mix(
+  --brand-neutral-inverse-s4: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 48%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 48%,
+    var(--brand-neutral-primary)
   );
-  --ploy-neutral-inverse-s5: color-mix(
+  --brand-neutral-inverse-s5: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 30%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 30%,
+    var(--brand-neutral-primary)
   );
-  --ploy-accent-primary: oklch(0.295 0.0532 180.99);
-  --ploy-accent-secondary: oklch(0.79 0.045 72);
-  --ploy-accent-tertiary: oklch(0.64 0.045 42);
-  --ploy-text-primary: var(--ploy-neutral-inverse);
-  --ploy-text-secondary: var(--ploy-neutral-inverse-700);
-  --ploy-text-inverse: oklch(1 0 0);
-  --ploy-text-inverse-secondary: oklch(1 0 0 / 60%);
-  --ploy-text-on-accent-primary: oklch(0.99 0.006 78);
-  --ploy-text-on-accent-secondary: oklch(1 0 0);
-  --ploy-text-on-accent-tertiary: oklch(0 0 0);
-  --ploy-button-primary-background: var(--ploy-accent-primary);
-  --ploy-button-primary-text: var(--ploy-text-on-accent-primary);
-  --ploy-button-primary-border: var(--ploy-accent-primary);
-  --ploy-button-secondary-background: var(--ploy-background-primary);
-  --ploy-button-secondary-text: var(--ploy-background-inverse);
-  --ploy-button-secondary-border: var(--ploy-neutral-inverse-300);
-  --ploy-background-primary: var(--ploy-neutral-primary-s1);
-  --ploy-background-secondary: var(--ploy-neutral-secondary);
-  --ploy-background-accent-primary: var(--ploy-accent-primary);
-  --ploy-background-accent-secondary: var(--ploy-accent-secondary);
-  --ploy-background-accent-tertiary: var(--ploy-accent-tertiary);
-  --ploy-background-inverse: var(--ploy-neutral-inverse-s1);
-  --ploy-border-primary: var(--ploy-neutral-primary-s5);
-  --ploy-border-inverse: color-mix(
+  --brand-accent-primary: oklch(0.295 0.0532 180.99);
+  --brand-accent-secondary: oklch(0.79 0.045 72);
+  --brand-accent-tertiary: oklch(0.64 0.045 42);
+  --brand-text-primary: var(--brand-neutral-inverse);
+  --brand-text-secondary: var(--brand-neutral-inverse-700);
+  --brand-text-inverse: oklch(1 0 0);
+  --brand-text-inverse-secondary: oklch(1 0 0 / 60%);
+  --brand-text-on-accent-primary: oklch(0.99 0.006 78);
+  --brand-text-on-accent-secondary: oklch(1 0 0);
+  --brand-text-on-accent-tertiary: oklch(0 0 0);
+  --brand-button-primary-background: var(--brand-accent-primary);
+  --brand-button-primary-text: var(--brand-text-on-accent-primary);
+  --brand-button-primary-border: var(--brand-accent-primary);
+  --brand-button-secondary-background: var(--brand-background-primary);
+  --brand-button-secondary-text: var(--brand-background-inverse);
+  --brand-button-secondary-border: var(--brand-neutral-inverse-300);
+  --brand-background-primary: var(--brand-neutral-primary-s1);
+  --brand-background-secondary: var(--brand-neutral-secondary);
+  --brand-background-accent-primary: var(--brand-accent-primary);
+  --brand-background-accent-secondary: var(--brand-accent-secondary);
+  --brand-background-accent-tertiary: var(--brand-accent-tertiary);
+  --brand-background-inverse: var(--brand-neutral-inverse-s1);
+  --brand-border-primary: var(--brand-neutral-primary-s5);
+  --brand-border-inverse: color-mix(
     in srgb,
-    var(--ploy-neutral-inverse-s0) 20%,
+    var(--brand-neutral-inverse-s0) 20%,
     transparent
   );
-  --ploy-input-background: var(--ploy-neutral-primary);
-  --ploy-input-border: var(--ploy-neutral-primary-s5);
+  --brand-input-background: var(--brand-neutral-primary);
+  --brand-input-border: var(--brand-neutral-primary-s5);
   --destructive: oklch(0.55 0.22 27);
-  --border: var(--ploy-border-primary);
-  --background: var(--ploy-background-primary);
-  --foreground: var(--ploy-text-primary);
-  --card: var(--ploy-background-secondary);
-  --card-foreground: var(--ploy-text-primary);
-  --popover: var(--ploy-background-secondary);
-  --popover-foreground: var(--ploy-text-primary);
-  --primary: var(--ploy-background-inverse);
-  --primary-foreground: var(--ploy-text-inverse);
-  --secondary: var(--ploy-background-secondary);
-  --secondary-foreground: var(--ploy-text-primary);
-  --muted: var(--ploy-background-secondary);
-  --muted-foreground: var(--ploy-text-secondary);
-  --accent: var(--ploy-background-primary);
-  --accent-foreground: var(--ploy-text-inverse);
-  --input: var(--ploy-input-border);
-  --ring: var(--ploy-border-inverse);
+  --border: var(--brand-border-primary);
+  --background: var(--brand-background-primary);
+  --foreground: var(--brand-text-primary);
+  --card: var(--brand-background-secondary);
+  --card-foreground: var(--brand-text-primary);
+  --popover: var(--brand-background-secondary);
+  --popover-foreground: var(--brand-text-primary);
+  --primary: var(--brand-background-inverse);
+  --primary-foreground: var(--brand-text-inverse);
+  --secondary: var(--brand-background-secondary);
+  --secondary-foreground: var(--brand-text-primary);
+  --muted: var(--brand-background-secondary);
+  --muted-foreground: var(--brand-text-secondary);
+  --accent: var(--brand-background-primary);
+  --accent-foreground: var(--brand-text-inverse);
+  --input: var(--brand-input-border);
+  --ring: var(--brand-border-inverse);
 
   /* Color scales (50-950) */
-  --ploy-neutral-primary-50: oklch(1 0 0);
-  --ploy-neutral-primary-100: oklch(0.964 0 0.2);
-  --ploy-neutral-primary-200: oklch(0.911 0 0.4);
-  --ploy-neutral-primary-300: oklch(0.849 0 0.6);
-  --ploy-neutral-primary-400: oklch(0.781 0 0.8);
-  --ploy-neutral-primary-500: oklch(0.708 0 1);
-  --ploy-neutral-primary-600: oklch(0.629 0 1.2);
-  --ploy-neutral-primary-700: oklch(0.547 0 1.4);
-  --ploy-neutral-primary-800: oklch(0.461 0 1.6);
-  --ploy-neutral-primary-900: oklch(0.372 0 1.8);
-  --ploy-neutral-primary-950: oklch(0.28 0 2);
-  --ploy-neutral-inverse-50: oklch(0.98 0 352);
-  --ploy-neutral-inverse-100: oklch(0.941 0 352.8);
-  --ploy-neutral-inverse-200: oklch(0.877 0 353.6);
-  --ploy-neutral-inverse-300: oklch(0.798 0 354.4);
-  --ploy-neutral-inverse-400: oklch(0.708 0 355.2);
-  --ploy-neutral-inverse-500: oklch(0.609 0 356);
-  --ploy-neutral-inverse-600: oklch(0.501 0 356.8);
-  --ploy-neutral-inverse-700: oklch(0.385 0 357.6);
-  --ploy-neutral-inverse-800: oklch(0.263 0 358.4);
-  --ploy-neutral-inverse-900: oklch(0.134 0 359.2);
-  --ploy-neutral-inverse-950: oklch(0 0 0);
-  --ploy-accent-primary-50: oklch(0.98 0 352);
-  --ploy-accent-primary-100: oklch(0.941 0 352.8);
-  --ploy-accent-primary-200: oklch(0.877 0 353.6);
-  --ploy-accent-primary-300: oklch(0.798 0 354.4);
-  --ploy-accent-primary-400: oklch(0.708 0 355.2);
-  --ploy-accent-primary-500: oklch(0.609 0 356);
-  --ploy-accent-primary-600: oklch(0.501 0 356.8);
-  --ploy-accent-primary-700: oklch(0.385 0 357.6);
-  --ploy-accent-primary-800: oklch(0.263 0 358.4);
-  --ploy-accent-primary-900: oklch(0.134 0 359.2);
-  --ploy-accent-primary-950: oklch(0 0 0);
-  --ploy-accent-secondary-50: oklch(1 0 0);
-  --ploy-accent-secondary-100: oklch(0.964 0 0.2);
-  --ploy-accent-secondary-200: oklch(0.911 0 0.4);
-  --ploy-accent-secondary-300: oklch(0.849 0 0.6);
-  --ploy-accent-secondary-400: oklch(0.781 0 0.8);
-  --ploy-accent-secondary-500: oklch(0.708 0 1);
-  --ploy-accent-secondary-600: oklch(0.629 0 1.2);
-  --ploy-accent-secondary-700: oklch(0.547 0 1.4);
-  --ploy-accent-secondary-800: oklch(0.461 0 1.6);
-  --ploy-accent-secondary-900: oklch(0.372 0 1.8);
-  --ploy-accent-secondary-950: oklch(0.28 0 2);
+  --brand-neutral-primary-50: oklch(1 0 0);
+  --brand-neutral-primary-100: oklch(0.964 0 0.2);
+  --brand-neutral-primary-200: oklch(0.911 0 0.4);
+  --brand-neutral-primary-300: oklch(0.849 0 0.6);
+  --brand-neutral-primary-400: oklch(0.781 0 0.8);
+  --brand-neutral-primary-500: oklch(0.708 0 1);
+  --brand-neutral-primary-600: oklch(0.629 0 1.2);
+  --brand-neutral-primary-700: oklch(0.547 0 1.4);
+  --brand-neutral-primary-800: oklch(0.461 0 1.6);
+  --brand-neutral-primary-900: oklch(0.372 0 1.8);
+  --brand-neutral-primary-950: oklch(0.28 0 2);
+  --brand-neutral-inverse-50: oklch(0.98 0 352);
+  --brand-neutral-inverse-100: oklch(0.941 0 352.8);
+  --brand-neutral-inverse-200: oklch(0.877 0 353.6);
+  --brand-neutral-inverse-300: oklch(0.798 0 354.4);
+  --brand-neutral-inverse-400: oklch(0.708 0 355.2);
+  --brand-neutral-inverse-500: oklch(0.609 0 356);
+  --brand-neutral-inverse-600: oklch(0.501 0 356.8);
+  --brand-neutral-inverse-700: oklch(0.385 0 357.6);
+  --brand-neutral-inverse-800: oklch(0.263 0 358.4);
+  --brand-neutral-inverse-900: oklch(0.134 0 359.2);
+  --brand-neutral-inverse-950: oklch(0 0 0);
+  --brand-accent-primary-50: oklch(0.98 0 352);
+  --brand-accent-primary-100: oklch(0.941 0 352.8);
+  --brand-accent-primary-200: oklch(0.877 0 353.6);
+  --brand-accent-primary-300: oklch(0.798 0 354.4);
+  --brand-accent-primary-400: oklch(0.708 0 355.2);
+  --brand-accent-primary-500: oklch(0.609 0 356);
+  --brand-accent-primary-600: oklch(0.501 0 356.8);
+  --brand-accent-primary-700: oklch(0.385 0 357.6);
+  --brand-accent-primary-800: oklch(0.263 0 358.4);
+  --brand-accent-primary-900: oklch(0.134 0 359.2);
+  --brand-accent-primary-950: oklch(0 0 0);
+  --brand-accent-secondary-50: oklch(1 0 0);
+  --brand-accent-secondary-100: oklch(0.964 0 0.2);
+  --brand-accent-secondary-200: oklch(0.911 0 0.4);
+  --brand-accent-secondary-300: oklch(0.849 0 0.6);
+  --brand-accent-secondary-400: oklch(0.781 0 0.8);
+  --brand-accent-secondary-500: oklch(0.708 0 1);
+  --brand-accent-secondary-600: oklch(0.629 0 1.2);
+  --brand-accent-secondary-700: oklch(0.547 0 1.4);
+  --brand-accent-secondary-800: oklch(0.461 0 1.6);
+  --brand-accent-secondary-900: oklch(0.372 0 1.8);
+  --brand-accent-secondary-950: oklch(0.28 0 2);
 }
 
 .dark {
   color-scheme: dark;
 
-  /* Ploy theme colors (dark mode - inverted lightness) */
-  --ploy-neutral-primary: oklch(0 0 0);
-  --ploy-neutral-secondary: oklch(0.03 0 0);
-  --ploy-neutral-inverse: oklch(1 0 0);
-  --ploy-neutral-light: oklch(0.941 0 352.8);
-  --ploy-neutral-dark: oklch(0 0 0);
-  --ploy-neutral-primary-s0: color-mix(
+  /* Theme colors (dark mode - inverted lightness) */
+  --brand-neutral-primary: oklch(0 0 0);
+  --brand-neutral-secondary: oklch(0.03 0 0);
+  --brand-neutral-inverse: oklch(1 0 0);
+  --brand-neutral-light: oklch(0.941 0 352.8);
+  --brand-neutral-dark: oklch(0 0 0);
+  --brand-neutral-primary-s0: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 88%,
+    var(--brand-neutral-primary) 88%,
     black
   );
-  --ploy-neutral-primary-s1: var(--ploy-neutral-primary);
-  --ploy-neutral-primary-s2: var(--ploy-neutral-secondary);
-  --ploy-neutral-primary-s3: color-mix(
+  --brand-neutral-primary-s1: var(--brand-neutral-primary);
+  --brand-neutral-primary-s2: var(--brand-neutral-secondary);
+  --brand-neutral-primary-s3: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 95%,
-    var(--ploy-neutral-inverse)
+    var(--brand-neutral-primary) 95%,
+    var(--brand-neutral-inverse)
   );
-  --ploy-neutral-primary-s4: color-mix(
+  --brand-neutral-primary-s4: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 88%,
-    var(--ploy-neutral-inverse)
+    var(--brand-neutral-primary) 88%,
+    var(--brand-neutral-inverse)
   );
-  --ploy-neutral-primary-s5: color-mix(
+  --brand-neutral-primary-s5: color-mix(
     in oklch,
-    var(--ploy-neutral-primary) 76%,
-    var(--ploy-neutral-inverse)
+    var(--brand-neutral-primary) 76%,
+    var(--brand-neutral-inverse)
   );
-  --ploy-neutral-inverse-s0: color-mix(
+  --brand-neutral-inverse-s0: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 88%,
+    var(--brand-neutral-inverse) 88%,
     white
   );
-  --ploy-neutral-inverse-s1: var(--ploy-neutral-inverse);
-  --ploy-neutral-inverse-s2: color-mix(
+  --brand-neutral-inverse-s1: var(--brand-neutral-inverse);
+  --brand-neutral-inverse-s2: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 84%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 84%,
+    var(--brand-neutral-primary)
   );
-  --ploy-neutral-inverse-s3: color-mix(
+  --brand-neutral-inverse-s3: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 66%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 66%,
+    var(--brand-neutral-primary)
   );
-  --ploy-neutral-inverse-s4: color-mix(
+  --brand-neutral-inverse-s4: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 48%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 48%,
+    var(--brand-neutral-primary)
   );
-  --ploy-neutral-inverse-s5: color-mix(
+  --brand-neutral-inverse-s5: color-mix(
     in oklch,
-    var(--ploy-neutral-inverse) 30%,
-    var(--ploy-neutral-primary)
+    var(--brand-neutral-inverse) 30%,
+    var(--brand-neutral-primary)
   );
-  --ploy-accent-primary: oklch(1 0 0);
-  --ploy-accent-secondary: oklch(0 0 0);
-  --ploy-accent-tertiary: oklch(1 0 0);
-  --ploy-text-primary: var(--ploy-neutral-primary-100);
-  --ploy-text-secondary: var(--ploy-neutral-primary-500);
-  --ploy-text-inverse: oklch(0 0 0);
-  --ploy-text-inverse-secondary: oklch(0 0 0 / 60%);
-  --ploy-text-on-accent-primary: oklch(0 0 0);
-  --ploy-text-on-accent-secondary: oklch(0 0 0);
-  --ploy-text-on-accent-tertiary: oklch(0.941 0 352.8);
-  --ploy-button-primary-background: var(--ploy-background-inverse);
-  --ploy-button-primary-text: var(--ploy-background-primary);
-  --ploy-button-primary-border: var(--ploy-background-inverse);
-  --ploy-button-secondary-background: var(--ploy-background-primary);
-  --ploy-button-secondary-text: var(--ploy-background-inverse);
-  --ploy-button-secondary-border: oklch(0.2 0 0);
-  --ploy-background-primary: var(--ploy-neutral-primary-s1);
-  --ploy-background-secondary: var(--ploy-neutral-secondary);
-  --ploy-background-accent-primary: var(--ploy-accent-primary);
-  --ploy-background-accent-secondary: var(--ploy-accent-secondary);
-  --ploy-background-accent-tertiary: var(--ploy-accent-tertiary);
-  --ploy-background-inverse: var(--ploy-neutral-inverse-s1);
-  --ploy-border-primary: var(--ploy-neutral-primary-s5);
-  --ploy-border-inverse: color-mix(
+  --brand-accent-primary: oklch(1 0 0);
+  --brand-accent-secondary: oklch(0 0 0);
+  --brand-accent-tertiary: oklch(1 0 0);
+  --brand-text-primary: var(--brand-neutral-primary-100);
+  --brand-text-secondary: var(--brand-neutral-primary-500);
+  --brand-text-inverse: oklch(0 0 0);
+  --brand-text-inverse-secondary: oklch(0 0 0 / 60%);
+  --brand-text-on-accent-primary: oklch(0 0 0);
+  --brand-text-on-accent-secondary: oklch(0 0 0);
+  --brand-text-on-accent-tertiary: oklch(0.941 0 352.8);
+  --brand-button-primary-background: var(--brand-background-inverse);
+  --brand-button-primary-text: var(--brand-background-primary);
+  --brand-button-primary-border: var(--brand-background-inverse);
+  --brand-button-secondary-background: var(--brand-background-primary);
+  --brand-button-secondary-text: var(--brand-background-inverse);
+  --brand-button-secondary-border: oklch(0.2 0 0);
+  --brand-background-primary: var(--brand-neutral-primary-s1);
+  --brand-background-secondary: var(--brand-neutral-secondary);
+  --brand-background-accent-primary: var(--brand-accent-primary);
+  --brand-background-accent-secondary: var(--brand-accent-secondary);
+  --brand-background-accent-tertiary: var(--brand-accent-tertiary);
+  --brand-background-inverse: var(--brand-neutral-inverse-s1);
+  --brand-border-primary: var(--brand-neutral-primary-s5);
+  --brand-border-inverse: color-mix(
     in srgb,
-    var(--ploy-neutral-inverse-s0) 20%,
+    var(--brand-neutral-inverse-s0) 20%,
     transparent
   );
-  --ploy-input-background: var(--ploy-neutral-primary);
-  --ploy-input-border: var(--ploy-neutral-primary-s5);
+  --brand-input-background: var(--brand-neutral-primary);
+  --brand-input-border: var(--brand-neutral-primary-s5);
   --destructive: oklch(0.45 0.22 27);
-  --border: var(--ploy-border-primary);
-  --background: var(--ploy-background-primary);
-  --foreground: var(--ploy-text-primary);
-  --card: var(--ploy-background-secondary);
-  --card-foreground: var(--ploy-text-primary);
-  --popover: var(--ploy-background-secondary);
-  --popover-foreground: var(--ploy-text-primary);
-  --primary: var(--ploy-background-inverse);
-  --primary-foreground: var(--ploy-text-inverse);
-  --secondary: var(--ploy-background-secondary);
-  --secondary-foreground: var(--ploy-text-primary);
-  --muted: var(--ploy-background-secondary);
-  --muted-foreground: var(--ploy-text-secondary);
-  --accent: var(--ploy-background-primary);
-  --accent-foreground: var(--ploy-text-inverse);
-  --input: var(--ploy-input-border);
-  --ring: var(--ploy-border-inverse);
+  --border: var(--brand-border-primary);
+  --background: var(--brand-background-primary);
+  --foreground: var(--brand-text-primary);
+  --card: var(--brand-background-secondary);
+  --card-foreground: var(--brand-text-primary);
+  --popover: var(--brand-background-secondary);
+  --popover-foreground: var(--brand-text-primary);
+  --primary: var(--brand-background-inverse);
+  --primary-foreground: var(--brand-text-inverse);
+  --secondary: var(--brand-background-secondary);
+  --secondary-foreground: var(--brand-text-primary);
+  --muted: var(--brand-background-secondary);
+  --muted-foreground: var(--brand-text-secondary);
+  --accent: var(--brand-background-primary);
+  --accent-foreground: var(--brand-text-inverse);
+  --input: var(--brand-input-border);
+  --ring: var(--brand-border-inverse);
 
   /* Color scales (static - same as light mode) */
-  --ploy-neutral-primary-50: oklch(0.98 0 352);
-  --ploy-neutral-primary-100: oklch(0.941 0 352.8);
-  --ploy-neutral-primary-200: oklch(0.877 0 353.6);
-  --ploy-neutral-primary-300: oklch(0.798 0 354.4);
-  --ploy-neutral-primary-400: oklch(0.708 0 355.2);
-  --ploy-neutral-primary-500: oklch(0.609 0 356);
-  --ploy-neutral-primary-600: oklch(0.501 0 356.8);
-  --ploy-neutral-primary-700: oklch(0.385 0 357.6);
-  --ploy-neutral-primary-800: oklch(0.263 0 358.4);
-  --ploy-neutral-primary-900: oklch(0.134 0 359.2);
-  --ploy-neutral-primary-950: oklch(0 0 0);
-  --ploy-neutral-inverse-50: oklch(1 0 0);
-  --ploy-neutral-inverse-100: oklch(0.964 0 0.2);
-  --ploy-neutral-inverse-200: oklch(0.911 0 0.4);
-  --ploy-neutral-inverse-300: oklch(0.849 0 0.6);
-  --ploy-neutral-inverse-400: oklch(0.781 0 0.8);
-  --ploy-neutral-inverse-500: oklch(0.708 0 1);
-  --ploy-neutral-inverse-600: oklch(0.629 0 1.2);
-  --ploy-neutral-inverse-700: oklch(0.547 0 1.4);
-  --ploy-neutral-inverse-800: oklch(0.461 0 1.6);
-  --ploy-neutral-inverse-900: oklch(0.372 0 1.8);
-  --ploy-neutral-inverse-950: oklch(0.28 0 2);
-  --ploy-accent-primary-50: oklch(1 0 0);
-  --ploy-accent-primary-100: oklch(0.964 0 0.2);
-  --ploy-accent-primary-200: oklch(0.911 0 0.4);
-  --ploy-accent-primary-300: oklch(0.849 0 0.6);
-  --ploy-accent-primary-400: oklch(0.781 0 0.8);
-  --ploy-accent-primary-500: oklch(0.708 0 1);
-  --ploy-accent-primary-600: oklch(0.629 0 1.2);
-  --ploy-accent-primary-700: oklch(0.547 0 1.4);
-  --ploy-accent-primary-800: oklch(0.461 0 1.6);
-  --ploy-accent-primary-900: oklch(0.372 0 1.8);
-  --ploy-accent-primary-950: oklch(0.28 0 2);
-  --ploy-accent-secondary-50: oklch(0.98 0 352);
-  --ploy-accent-secondary-100: oklch(0.941 0 352.8);
-  --ploy-accent-secondary-200: oklch(0.877 0 353.6);
-  --ploy-accent-secondary-300: oklch(0.798 0 354.4);
-  --ploy-accent-secondary-400: oklch(0.708 0 355.2);
-  --ploy-accent-secondary-500: oklch(0.609 0 356);
-  --ploy-accent-secondary-600: oklch(0.501 0 356.8);
-  --ploy-accent-secondary-700: oklch(0.385 0 357.6);
-  --ploy-accent-secondary-800: oklch(0.263 0 358.4);
-  --ploy-accent-secondary-900: oklch(0.134 0 359.2);
-  --ploy-accent-secondary-950: oklch(0 0 0);
+  --brand-neutral-primary-50: oklch(0.98 0 352);
+  --brand-neutral-primary-100: oklch(0.941 0 352.8);
+  --brand-neutral-primary-200: oklch(0.877 0 353.6);
+  --brand-neutral-primary-300: oklch(0.798 0 354.4);
+  --brand-neutral-primary-400: oklch(0.708 0 355.2);
+  --brand-neutral-primary-500: oklch(0.609 0 356);
+  --brand-neutral-primary-600: oklch(0.501 0 356.8);
+  --brand-neutral-primary-700: oklch(0.385 0 357.6);
+  --brand-neutral-primary-800: oklch(0.263 0 358.4);
+  --brand-neutral-primary-900: oklch(0.134 0 359.2);
+  --brand-neutral-primary-950: oklch(0 0 0);
+  --brand-neutral-inverse-50: oklch(1 0 0);
+  --brand-neutral-inverse-100: oklch(0.964 0 0.2);
+  --brand-neutral-inverse-200: oklch(0.911 0 0.4);
+  --brand-neutral-inverse-300: oklch(0.849 0 0.6);
+  --brand-neutral-inverse-400: oklch(0.781 0 0.8);
+  --brand-neutral-inverse-500: oklch(0.708 0 1);
+  --brand-neutral-inverse-600: oklch(0.629 0 1.2);
+  --brand-neutral-inverse-700: oklch(0.547 0 1.4);
+  --brand-neutral-inverse-800: oklch(0.461 0 1.6);
+  --brand-neutral-inverse-900: oklch(0.372 0 1.8);
+  --brand-neutral-inverse-950: oklch(0.28 0 2);
+  --brand-accent-primary-50: oklch(1 0 0);
+  --brand-accent-primary-100: oklch(0.964 0 0.2);
+  --brand-accent-primary-200: oklch(0.911 0 0.4);
+  --brand-accent-primary-300: oklch(0.849 0 0.6);
+  --brand-accent-primary-400: oklch(0.781 0 0.8);
+  --brand-accent-primary-500: oklch(0.708 0 1);
+  --brand-accent-primary-600: oklch(0.629 0 1.2);
+  --brand-accent-primary-700: oklch(0.547 0 1.4);
+  --brand-accent-primary-800: oklch(0.461 0 1.6);
+  --brand-accent-primary-900: oklch(0.372 0 1.8);
+  --brand-accent-primary-950: oklch(0.28 0 2);
+  --brand-accent-secondary-50: oklch(0.98 0 352);
+  --brand-accent-secondary-100: oklch(0.941 0 352.8);
+  --brand-accent-secondary-200: oklch(0.877 0 353.6);
+  --brand-accent-secondary-300: oklch(0.798 0 354.4);
+  --brand-accent-secondary-400: oklch(0.708 0 355.2);
+  --brand-accent-secondary-500: oklch(0.609 0 356);
+  --brand-accent-secondary-600: oklch(0.501 0 356.8);
+  --brand-accent-secondary-700: oklch(0.385 0 357.6);
+  --brand-accent-secondary-800: oklch(0.263 0 358.4);
+  --brand-accent-secondary-900: oklch(0.134 0 359.2);
+  --brand-accent-secondary-950: oklch(0 0 0);
 }
-/* ploy-theme-end */
+/* brand-theme-end */
 
 @layer base {
   * {
@@ -547,7 +547,7 @@
   }
 
   body {
-    @apply bg-ploy-background-primary text-ploy-text-primary;
+    @apply bg-brand-background-primary text-brand-text-primary;
     font-weight: var(--font-body-weight);
     letter-spacing: var(--font-body-letter-spacing);
     line-height: var(--font-body-line-height);
@@ -615,20 +615,20 @@
    Prose. Tailwind Typography
    ============================================ */
 .prose {
-  --tw-prose-body: var(--ploy-text-primary);
-  --tw-prose-headings: var(--ploy-text-primary);
-  --tw-prose-lead: var(--ploy-text-secondary);
-  --tw-prose-links: var(--ploy-accent-primary);
-  --tw-prose-bold: var(--ploy-text-primary);
-  --tw-prose-counters: var(--ploy-text-secondary);
-  --tw-prose-bullets: var(--ploy-text-primary);
-  --tw-prose-hr: var(--ploy-border-primary);
-  --tw-prose-quotes: var(--ploy-text-primary);
-  --tw-prose-quote-borders: var(--ploy-border-primary);
-  --tw-prose-captions: var(--ploy-text-secondary);
-  --tw-prose-code: var(--ploy-text-primary);
-  --tw-prose-pre-code: var(--ploy-text-primary);
-  --tw-prose-pre-bg: var(--ploy-background-secondary);
-  --tw-prose-th-borders: var(--ploy-border-primary);
-  --tw-prose-td-borders: var(--ploy-border-primary);
+  --tw-prose-body: var(--brand-text-primary);
+  --tw-prose-headings: var(--brand-text-primary);
+  --tw-prose-lead: var(--brand-text-secondary);
+  --tw-prose-links: var(--brand-accent-primary);
+  --tw-prose-bold: var(--brand-text-primary);
+  --tw-prose-counters: var(--brand-text-secondary);
+  --tw-prose-bullets: var(--brand-text-primary);
+  --tw-prose-hr: var(--brand-border-primary);
+  --tw-prose-quotes: var(--brand-text-primary);
+  --tw-prose-quote-borders: var(--brand-border-primary);
+  --tw-prose-captions: var(--brand-text-secondary);
+  --tw-prose-code: var(--brand-text-primary);
+  --tw-prose-pre-code: var(--brand-text-primary);
+  --tw-prose-pre-bg: var(--brand-background-secondary);
+  --tw-prose-th-borders: var(--brand-border-primary);
+  --tw-prose-td-borders: var(--brand-border-primary);
 }

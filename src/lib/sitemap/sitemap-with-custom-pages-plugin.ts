@@ -5,9 +5,8 @@ import { SITE_CONFIG } from "../../site-config";
 import { getSitemapPaths } from "./get-sitemap-paths";
 import { normalizeSourceUrls } from "./shared";
 
-// Ploy patches the `site:` literal at deploy time, so we emit URLs against a
-// placeholder and swap it for the resolved `config.site` at sitemap emit time.
-const PLACEHOLDER = "https://ploy.invalid";
+// URLs are emitted against a placeholder and swapped for `config.site` at sitemap emit time.
+const PLACEHOLDER = "https://sitemap.invalid";
 
 export function sitemapWithCustomPages(
   options: SitemapOptions = {},
